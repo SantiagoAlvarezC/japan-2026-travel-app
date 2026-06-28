@@ -1,6 +1,6 @@
 /* Service worker — offline-first for the Japan 2026 trip app.
    Bump CACHE when you ship new app/data so clients refresh. */
-const CACHE = 'japon-2026-v11';
+const CACHE = 'japon-2026-v12';
 const ASSETS = [
   './',
   './index.html',
@@ -28,19 +28,17 @@ self.addEventListener('fetch', (e) => {
   if (req.method !== 'GET') return;
   const url = new URL(req.url);
 
-  // Same-origin: cache-first (works fully offline), then update in background.
+  // Same-origin: network-first (always fresh when online), fall back to cache offline.
+  // This prevents stale app shells after a deploy — updates show on the next load.
   if (url.origin === location.origin) {
     e.respondWith(
-      caches.match(req).then((cached) => {
-        const net = fetch(req).then((res) => {
-          if (res && res.status === 200) {
-            const copy = res.clone();
-            caches.open(CACHE).then((c) => c.put(req, copy));
-          }
-          return res;
-        }).catch(() => cached);
-        return cached || net;
-      })
+      fetch(req).then((res) => {
+        if (res && res.status === 200) {
+          const copy = res.clone();
+          caches.open(CACHE).then((c) => c.put(req, copy));
+        }
+        return res;
+      }).catch(() => caches.match(req))
     );
     return;
   }

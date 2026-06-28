@@ -309,6 +309,11 @@
         <div style="font-size:20px;">→</div></div></div>` : ''}
       <div style="padding:24px 18px 4px;"><div class="secttl">${tr('LA RUTA','THE ROUTE')} · 道のり</div></div>
       <div data-noswipe style="padding:6px 18px 18px;display:flex;gap:8px;overflow-x:auto;">${route}</div>
+      <div style="padding:6px 18px 4px;"><div class="secttl">${tr('EL MAPA','THE MAP')} · 地図</div></div>
+      <div data-noswipe style="padding:6px 16px 18px;">
+        <div id="mapcanvas-home" style="height:240px;border-radius:14px;overflow:hidden;background:#dfe6e4;"></div>
+        <div class="tap" data-action="go" data-screen="mapa" style="text-align:center;font-size:12px;color:#1f3a52;font-weight:700;margin-top:9px;">${tr('Ver todos los lugares en grande','See all places full-screen')} ›</div>
+      </div>
       ${flightCard}
       <div style="padding:6px 18px 4px;"><div class="secttl">${tr('EXPLORAR','EXPLORE')}</div></div>
       <div style="padding:8px 18px 24px;display:grid;grid-template-columns:1fr 1fr;gap:10px;">${hubs}</div>
@@ -445,6 +450,7 @@
 
   /* ---------------- interactive map (Leaflet, lazy-loaded) ---------------- */
   let leafletMarkers = {};
+  let leafletInstances = {}; // elId -> Leaflet map (supports the home + Lugares maps independently)
   function ensureLeaflet() {
     if (window.L) return Promise.resolve(window.L);
     if (leafletLoading) return leafletLoading;
@@ -460,15 +466,17 @@
     });
     return leafletLoading;
   }
-  function initMapa() {
-    const el = document.getElementById('mapcanvas');
+  function initMapa(elId, isMain) {
+    elId = elId || 'mapcanvas';
+    const el = document.getElementById(elId);
     if (!el) return;
     ensureLeaflet().then(L => {
       if (!document.body.contains(el)) return; // user navigated away while loading
-      if (leafletMap) { try { leafletMap.remove(); } catch (e) {} leafletMap = null; }
-      leafletMarkers = {};
-      const map = L.map(el, { zoomControl: true, attributionControl: true });
-      leafletMap = map;
+      if (leafletInstances[elId]) { try { leafletInstances[elId].remove(); } catch (e) {} delete leafletInstances[elId]; }
+      if (isMain) { leafletMarkers = {}; leafletMap = null; }
+      const map = L.map(el, { zoomControl: !!isMain, attributionControl: true });
+      leafletInstances[elId] = map;
+      if (isMain) leafletMap = map;
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19, attribution: '&copy; OpenStreetMap' }).addTo(map);
       const pts = [];
       T.placeGroups.forEach(g => {
@@ -486,14 +494,14 @@
               <a href="${mapsDir(L(p.maps) || L(p.name))}" target="_blank" rel="noopener" style="flex:1;text-align:center;background:#1f3a52;color:#fff;border-radius:8px;padding:6px;font-size:11px;font-weight:700;text-decoration:none;">${tr('Cómo llegar', 'Directions')} ↗</a>
               <span class="tap" data-action="toggle" data-id="${p.id}" style="flex:1;text-align:center;background:${done ? '#c13b2f' : '#5a7d4f'};color:#fff;border-radius:8px;padding:6px;font-size:11px;font-weight:700;">${done ? tr('Quitar', 'Unvisit') : tr('Visitado', 'Visited')}</span>
             </div></div>`);
-          leafletMarkers[p.id] = m;
+          if (isMain) leafletMarkers[p.id] = m;
           pts.push([p.lat, p.lng]);
         });
       });
-      if (leafletView) map.setView(leafletView.center, leafletView.zoom);
+      if (isMain && leafletView) map.setView(leafletView.center, leafletView.zoom);
       else if (pts.length) map.fitBounds(pts, { padding: [30, 30] });
       else map.setView([35.0, 136.0], 5);
-      map.on('moveend', () => { leafletView = { center: map.getCenter(), zoom: map.getZoom() }; });
+      if (isMain) map.on('moveend', () => { leafletView = { center: map.getCenter(), zoom: map.getZoom() }; });
       setTimeout(() => map.invalidateSize(), 60);
     }).catch(() => {
       if (document.body.contains(el)) el.innerHTML = `<div style="display:flex;align-items:center;justify-content:center;height:100%;text-align:center;font-size:12px;color:#8a7c64;padding:16px;">${tr('No se pudo cargar el mapa (sin conexión la primera vez). La lista de abajo sigue funcionando.', 'Map could not load (offline on first use). The list below still works.')}</div>`;
@@ -1029,7 +1037,8 @@
     sc.scrollTop = top;
     document.documentElement.lang = lang();
     renderOverlay();
-    if (screen === 'mapa') initMapa();
+    if (screen === 'mapa') initMapa('mapcanvas', true);
+    if (screen === 'inicio') initMapa('mapcanvas-home', false);
     if (!keepScroll && screen === 'plan') {
       const n = tripDayN();
       if (n) { const el = document.getElementById('daycard-' + n); if (el && el.scrollIntoView) setTimeout(() => el.scrollIntoView({ behavior: 'smooth', block: 'start' }), 30); }
@@ -1197,7 +1206,16 @@
   document.addEventListener('visibilitychange', function () { if (!document.hidden) pullState(); });
 
   if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => navigator.serviceWorker.register('sw.js').catch(() => {}));
+    let swReloading = false;
+    navigator.serviceWorker.addEventListener('controllerchange', () => {
+      if (swReloading) return; swReloading = true; location.reload(); // new version activated → refresh once
+    });
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('sw.js').then((reg) => {
+        reg.update();
+        setInterval(() => reg.update(), 60 * 60 * 1000); // check hourly while open
+      }).catch(() => {});
+    });
   }
 })();
 </script>
