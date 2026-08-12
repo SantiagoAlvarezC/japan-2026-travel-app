@@ -748,6 +748,12 @@
       const name = ov.name || L(s.name);
       const note = ov.note || L(s.note);
       const tags = (s.tags || []).map(t => `<span class="pill" style="background:${s.color}1a;color:${s.color};margin-right:6px;">${esc(L(t))}</span>`).join('');
+      const details = (s.checkIn || s.checkOut || s.address || s.phone) ? `<div style="background:#faf6ea;border-radius:9px;padding:10px 12px;margin:8px 0;font-size:12px;color:#5b4f3a;line-height:1.7;">
+        ${s.checkIn ? `<div>🛎️ ${tr('Check-in', 'Check-in')}: <b>${esc(L(s.checkIn))}</b></div>` : ''}
+        ${s.checkOut ? `<div>🚪 ${tr('Check-out', 'Check-out')}: <b>${esc(L(s.checkOut))}</b></div>` : ''}
+        ${s.address ? `<div>📍 ${esc(L(s.address))}</div>` : ''}
+        ${s.phone ? `<div>📞 <a href="tel:${esc(s.phone.replace(/[^0-9+]/g, ''))}" style="color:#5b4f3a;">${esc(s.phone)}</a></div>` : ''}
+      </div>` : '';
       return `<div class="card" style="padding:15px;margin-bottom:10px;border-left:4px solid ${s.color};">
         <div style="display:flex;justify-content:space-between;align-items:center;">
           <div style="font-size:11px;font-weight:700;color:${s.color};letter-spacing:1px;">${esc(L(s.city))} · ${esc(L(s.dates))}</div>
@@ -755,8 +761,12 @@
         <div class="serif" style="font-size:17px;font-weight:700;margin-top:6px;">${esc(name)}</div>
         <div style="font-size:12px;color:#6b5f4c;margin:5px 0 8px;">${esc(note)}</div>
         ${ov.code ? `<div style="font-size:12px;color:#5a7d4f;font-weight:700;margin-bottom:6px;">${tr('Reserva', 'Booking')}: ${esc(ov.code)}</div>` : ''}
+        ${details}
         <div>${tags}</div>
-        <a href="${mapsUrl(L(s.maps))}" target="_blank" rel="noopener" style="display:inline-block;margin-top:8px;font-size:12px;color:${s.color};font-weight:700;text-decoration:none;">${tr('Buscar en Maps', 'Search on Maps')} ↗</a></div>`;
+        <div style="display:flex;gap:16px;margin-top:8px;">
+          <a href="${mapsUrl(L(s.maps))}" target="_blank" rel="noopener" style="font-size:12px;color:${s.color};font-weight:700;text-decoration:none;">${tr('Cómo llegar', 'Get directions')} ↗</a>
+          <div class="tap" data-action="go" data-screen="reservas" style="font-size:12px;color:${s.color};font-weight:700;">${tr('Ver comprobante', 'See booking')} ›</div>
+        </div></div>`;
     }).join('');
     return listScreen('宿', tr('Hospedajes', 'Stays'), tr('dónde dormimos', 'where we sleep'), body);
   }

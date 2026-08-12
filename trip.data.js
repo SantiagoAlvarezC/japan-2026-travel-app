@@ -45,7 +45,7 @@ window.TRIP = {
   route: [
     { kanji: "阪", city: "Osaka",    dates: { es: "28 – 31 Ago", en: "28 – 31 Aug" }, nights: { es: "3 noches", en: "3 nights" }, color: "#c13b2f" },
     { kanji: "京", city: "Kyoto",    dates: { es: "31 Ago – 3 Sep", en: "31 Aug – 3 Sep" }, nights: { es: "3 noches", en: "3 nights" }, color: "#1f3a52" },
-    { kanji: "飛", city: { es: "Takayama (día) / Gero Onsen (noches)", en: "Takayama (day) / Gero Onsen (nights)" }, dates: { es: "3 – 5 Sep", en: "3 – 5 Sep" }, nights: { es: "2 noches · ryokan en Gero", en: "2 nights · ryokan in Gero" }, color: "#5a7d4f" },
+    { kanji: "飛", city: { es: "Takayama (día) / Gero Onsen (noches)", en: "Takayama (day) / Gero Onsen (nights)" }, dates: { es: "3 – 5 Sep", en: "3 – 5 Sep" }, nights: { es: "2 noches · ryokan con onsen (Gero)", en: "2 nights · onsen ryokan (Gero)" }, color: "#5a7d4f" },
     { kanji: "東", city: "Tokyo",    dates: { es: "5 – 11 Sep", en: "5 – 11 Sep" }, nights: { es: "6 noches", en: "6 nights" }, color: "#3a3128" }
   ],
 
@@ -149,7 +149,7 @@ window.TRIP = {
         { time: "12:30", type: "🍜", text: { es: "Almuerzo en Takayama (¡Hida beef!)", en: "Lunch in Takayama (Hida beef!)" }, note: { es: "Guardar mochilas en lockers de la estación", en: "Stash bags in station lockers" } },
         { time: "14:00", type: "📍", text: { es: "Sanmachi Suji — casco antiguo Edo (+ Takayama Jinya opcional)", en: "Sanmachi Suji — old Edo quarter (+ Takayama Jinya optional)" }, note: { es: "Casas de madera, sake", en: "Wooden houses, sake" } },
         { time: "16:00", type: "🚆", text: { es: "Recoger mochilas. Tren Takayama → Gero", en: "Grab bags. Train Takayama → Gero" }, note: { es: "Hida/local, ~45 min", en: "Hida/local, ~45 min" } },
-        { time: "17:00", type: "♨️", text: { es: "Check-in RYOKAN tradicional (en GERO, no Takayama)", en: "Check-in traditional RYOKAN (in GERO, not Takayama)" }, note: { es: "9 min a pie desde la estación de Gero", en: "9 min walk from Gero station" } },
+        { time: "17:00", type: "♨️", text: { es: "Check-in RYOKAN con onsen (en GERO, no Takayama)", en: "Check-in ONSEN RYOKAN (in GERO, not Takayama)" }, note: { es: "9 min a pie desde la estación de Gero", en: "9 min walk from Gero station" } },
         { time: "18:00", type: "♨️", text: { es: "Onsen del ryokan", en: "Ryokan onsen" }, note: { es: "Japón de antaño", en: "Old Japan" } },
         { time: "19:30", type: "🍜", text: { es: "Cena kaiseki en el ryokan (Hida beef)", en: "Kaiseki dinner at the ryokan (Hida beef)" }, note: { es: "Incluida", en: "Included" } },
         { time: "21:30", type: "😴", text: { es: "Dormir en futón sobre tatami", en: "Sleep on a futon over tatami" }, note: { es: "", en: "" } }
@@ -283,7 +283,7 @@ window.TRIP = {
     { city: { es: "Takayama / Alpes", en: "Takayama / Alps" }, kanji: "飛", color: "#5a7d4f", places: [
       { id: "pl-tk_a1", name: "Sanmachi Suji", desc: { es: "Casco antiguo de Takayama", en: "Old town of Takayama" }, tag: { es: "Edo", en: "Edo" }, maps: "Sanmachi Suji, Takayama", lat: 36.1408, lng: 137.2580 },
       { id: "pl-tk_a2", name: "Shirakawa-go", desc: { es: "Aldea gassho-zukuri (UNESCO)", en: "Gassho-zukuri village (UNESCO)" }, tag: { es: "UNESCO", en: "UNESCO" }, maps: "Shirakawa-go", lat: 36.2575, lng: 136.9066 },
-      { id: "pl-tk_a3", name: { es: "Onsen del ryokan (Gero, no Takayama)", en: "Ryokan onsen (Gero, not Takayama)" }, desc: { es: "Ooedo Onsen Monogatari Gero Bekkan — aguas termales y kaiseki, ~45 min en tren desde Takayama", en: "Ooedo Onsen Monogatari Gero Bekkan — hot springs & kaiseki, ~45 min by train from Takayama" }, tag: { es: "♨ Onsen", en: "♨ Onsen" }, maps: "Ooedo Onsen Monogatari Gero Bekkan", lat: 35.8025, lng: 137.2505 }
+      { id: "pl-tk_a3", name: { es: "Onsen del ryokan (Gero, no Takayama)", en: "Ryokan onsen (Gero, not Takayama)" }, desc: { es: "Ooedo Onsen Monogatari Gero Bekkan — aguas termales y kaiseki, ~45 min en tren desde Takayama", en: "Ooedo Onsen Monogatari Gero Bekkan — hot springs & kaiseki, ~45 min by train from Takayama" }, tag: { es: "♨ Onsen", en: "♨ Onsen" }, maps: "Ooedo Onsen Monogatari Gero Bekkan", lat: 35.81025, lng: 137.240717 }
     ]},
     { city: { es: "Tokyo y alrededores", en: "Tokyo & around" }, kanji: "東", color: "#3a3128", places: [
       { id: "pl-tk1", name: "Senso-ji", desc: { es: "Templo más antiguo, Asakusa", en: "Oldest temple, Asakusa" }, tag: { es: "Templo", en: "Temple" }, maps: "Senso-ji", lat: 35.7148, lng: 139.7967 },
@@ -307,7 +307,7 @@ window.TRIP = {
     { name: "Ramen", jp: "ラーメン", desc: { es: "Caldo y fideos, mil estilos.", en: "Broth and noodles, endless styles." }, where: { es: "En todo Japón", en: "All over Japan" } },
     { name: { es: "Sushi y Sashimi", en: "Sushi & Sashimi" }, jp: "寿司", desc: { es: "Fresco del mercado.", en: "Fresh from the market." }, where: { es: "Mercados Kuromon / Tsukiji", en: "Kuromon / Tsukiji markets" } },
     { name: "Hida Wagyu", jp: "飛騨牛", desc: { es: "La estrella de Takayama.", en: "The star of Takayama." }, where: { es: "Takayama", en: "Takayama" } },
-    { name: "Kaiseki", jp: "懐石", desc: { es: "Cena tradicional de varios platos.", en: "Traditional multi-course dinner." }, where: { es: "Ryokan en Takayama", en: "Ryokan in Takayama" } },
+    { name: "Kaiseki", jp: "懐石", desc: { es: "Cena tradicional de varios platos.", en: "Traditional multi-course dinner." }, where: { es: "Ryokan con onsen en Gero", en: "Onsen ryokan in Gero" } },
     { name: { es: "Matcha y Wagashi", en: "Matcha & Wagashi" }, jp: "抹茶", desc: { es: "Té y dulces japoneses.", en: "Japanese tea and sweets." }, where: { es: "Kyoto", en: "Kyoto" } },
     { name: { es: "Taiyaki y Mochi", en: "Taiyaki & Mochi" }, jp: "たい焼き", desc: { es: "Antojos dulces de calle.", en: "Sweet street treats." }, where: { es: "Harajuku, Tokyo", en: "Harajuku, Tokyo" } }
   ],
@@ -316,10 +316,18 @@ window.TRIP = {
   /*  STAYS (Hospedaje) — status: todo | booked                             */
   /* ---------------------------------------------------------------------- */
   stays: [
-    { id: "stay-os", city: "OSAKA", dates: { es: "28–31 Ago", en: "28–31 Aug" }, name: "Hearton Hotel Shinsaibashi", color: "#c13b2f", note: { es: "Conf: WG53TXK5RLC6 · Sur Shinsaibashi, cerca de Dotonbori. Tarifa cancelable.", en: "Conf: WG53TXK5RLC6 · South Shinsaibashi, near Dotonbori. Refundable rate." }, tags: [{ es: "3 noches", en: "3 nights" }, { es: "Shinsaibashi", en: "Shinsaibashi" }], maps: "Hearton Hotel Shinsaibashi Osaka", status: "booked" },
-    { id: "stay-ky", city: "KYOTO", dates: { es: "31 Ago–3 Sep", en: "31 Aug–3 Sep" }, name: "APA Hotel Kyoto Ekimae Chuoguchi", color: "#1f3a52", note: { es: "Conf: 3VP6FTDP2BPV · Frente a la Estación de Kyoto. Tarifa cancelable.", en: "Conf: 3VP6FTDP2BPV · Opposite Kyoto Station. Refundable rate." }, tags: [{ es: "3 noches", en: "3 nights" }, { es: "Estación", en: "Station" }], maps: "APA Hotel Kyoto Ekimae Chuoguchi", status: "booked" },
-    { id: "stay-ta", city: { es: "GERO (Onsen)", en: "GERO (Onsen)" }, dates: { es: "3–5 Sep", en: "3–5 Sep" }, name: "Ooedo Onsen Monogatari Gero Bekkan", color: "#5a7d4f", note: { es: "Conf: 5179.228.979 · Aguas termales de Gero, ~1h sur de Takayama. Onsen + kaiseki incluida. Tarifa cancelable.", en: "Conf: 5179.228.979 · Gero hot springs, ~1h south of Takayama. Onsen + kaiseki included. Refundable rate." }, tags: [{ es: "2 noches", en: "2 nights" }, { es: "Onsen", en: "Onsen" }, { es: "Kaiseki", en: "Kaiseki" }], maps: "Ooedo Onsen Monogatari Gero Bekkan", status: "booked" },
-    { id: "stay-tk", city: "TOKYO", dates: { es: "5–11 Sep", en: "5–11 Sep" }, name: "APA Hotel Asakusa Kaminarimon Minami", color: "#3a3128", note: { es: "Conf: 5203.022.412 · Asakusa, junto a la Puerta del Trueno. Tarifa cancelable.", en: "Conf: 5203.022.412 · Asakusa, by the Thunder Gate. Refundable rate." }, tags: [{ es: "6 noches", en: "6 nights" }, { es: "Asakusa", en: "Asakusa" }], maps: "APA Hotel Asakusa Kaminarimon Minami", status: "booked" }
+    { id: "stay-os", city: "OSAKA", dates: { es: "28–31 Ago", en: "28–31 Aug" }, name: "Hearton Hotel Shinsaibashi", color: "#c13b2f", note: { es: "Conf: WG53TXK5RLC6 · Sur Shinsaibashi, cerca de Dotonbori. Tarifa cancelable.", en: "Conf: WG53TXK5RLC6 · South Shinsaibashi, near Dotonbori. Refundable rate." }, tags: [{ es: "3 noches", en: "3 nights" }, { es: "Shinsaibashi", en: "Shinsaibashi" }], maps: "Hearton Hotel Shinsaibashi Osaka", status: "booked",
+      checkIn: { es: "vie 28 ago, 15:00", en: "Fri 28 Aug, 3:00pm" }, checkOut: { es: "lun 31 ago, 12:00", en: "Mon 31 Aug, 12:00pm" }, phone: "+81-6-6251-3711",
+      address: { es: "1-5-24 Nishi Shinsaibashi, Chuo-ku, Osaka", en: "1-5-24 Nishi Shinsaibashi, Chuo-ku, Osaka" } },
+    { id: "stay-ky", city: "KYOTO", dates: { es: "31 Ago–3 Sep", en: "31 Aug–3 Sep" }, name: "APA Hotel Kyoto Ekimae Chuoguchi", color: "#1f3a52", note: { es: "Conf: 3VP6FTDP2BPV · Frente a la Estación de Kyoto. Tarifa cancelable.", en: "Conf: 3VP6FTDP2BPV · Opposite Kyoto Station. Refundable rate." }, tags: [{ es: "3 noches", en: "3 nights" }, { es: "Estación", en: "Station" }], maps: "APA Hotel Kyoto Ekimae Chuoguchi", status: "booked",
+      checkIn: { es: "lun 31 ago, 15:00", en: "Mon 31 Aug, 3:00pm" }, checkOut: { es: "jue 3 sep, 10:00", en: "Thu 3 Sep, 10:00am" }, phone: "+81-75-341-8111",
+      address: { es: "533 Shiokoji-cho, Shichijosagaru, Higashinotoin-dori, Shimogyo-ku, Kyoto", en: "533 Shiokoji-cho, Shichijosagaru, Higashinotoin-dori, Shimogyo-ku, Kyoto" } },
+    { id: "stay-ta", city: { es: "GERO (Onsen)", en: "GERO (Onsen)" }, dates: { es: "3–5 Sep", en: "3–5 Sep" }, name: "Ooedo Onsen Monogatari Gero Bekkan", color: "#5a7d4f", note: { es: "Conf: 5179.228.979 · PIN 7623 · Ryokan con onsen en Gero, ~1h sur de Takayama. Desayuno + cena kaiseki incluidos. Tarifa cancelable hasta el 26 ago.", en: "Conf: 5179.228.979 · PIN 7623 · Onsen ryokan in Gero, ~1h south of Takayama. Breakfast + kaiseki dinner included. Refundable until 26 Aug." }, tags: [{ es: "2 noches", en: "2 nights" }, { es: "Onsen", en: "Onsen" }, { es: "Kaiseki", en: "Kaiseki" }], maps: "Ooedo Onsen Monogatari Gero Bekkan", status: "booked",
+      checkIn: { es: "jue 3 sep, 15:00–19:00", en: "Thu 3 Sep, 3:00–7:00pm" }, checkOut: { es: "sáb 5 sep, hasta 11:00", en: "Sat 5 Sep, until 11:00am" }, phone: "+81-50-3615-3456",
+      address: { es: "Yunoshima 535, Gero 509-2207, Gifu", en: "Yunoshima 535, Gero 509-2207, Gifu" } },
+    { id: "stay-tk", city: "TOKYO", dates: { es: "5–11 Sep", en: "5–11 Sep" }, name: "APA Hotel Asakusa Kaminarimon Minami", color: "#3a3128", note: { es: "Conf: 5203.022.412 · Asakusa, junto a la Puerta del Trueno. Tarifa cancelable.", en: "Conf: 5203.022.412 · Asakusa, by the Thunder Gate. Refundable rate." }, tags: [{ es: "6 noches", en: "6 nights" }, { es: "Asakusa", en: "Asakusa" }], maps: "APA Hotel Asakusa Kaminarimon Minami", status: "booked",
+      checkIn: { es: "sáb 5 sep, 15:00–24:00", en: "Sat 5 Sep, 3:00pm–midnight" }, checkOut: { es: "vie 11 sep, hasta 10:00", en: "Fri 11 Sep, until 10:00am" }, phone: "+81-3-5830-9711",
+      address: { es: "Kaminarimon 2-9-1, Taito-ku, Tokyo 111-0034", en: "Kaminarimon 2-9-1, Taito-ku, Tokyo 111-0034" } }
   ],
 
   /* ---------------------------------------------------------------------- */
@@ -492,7 +500,7 @@ window.TRIP = {
     { t: { es: "Pañales y comida allá", en: "Diapers & food there" }, d: { es: "Konbini y farmacias venden pañales (Moony, Merries), papillas y leche. Solo lleven lo justo para empezar.", en: "Konbini and pharmacies sell diapers (Moony, Merries), baby food and milk. Bring just enough to start." } },
     { t: { es: "Eviten horas pico en tren", en: "Avoid rush hour trains" }, d: { es: "De 7-9am y 5-7pm los trenes van llenísimos. Viajen a media mañana o tarde con Nico.", en: "7-9am and 5-7pm trains are packed. Travel mid-morning or afternoon with Nico." } },
     { t: { es: "Siesta sobre la marcha", en: "Naps on the move" }, d: { es: "Nico siempre duerme en cochecito/cargador mientras caminan. Sin vueltas al hotel al mediodía.", en: "Nico always naps in the stroller/carrier on the move. No midday hotel returns." } },
-    { t: { es: "Onsen con bebé", en: "Onsen with a baby" }, d: { es: "En Takayama reserven onsen privado (kashikiri / habitación con baño termal) para bañarse en familia.", en: "In Takayama book a private onsen (kashikiri / room with thermal bath) to bathe as a family." } },
+    { t: { es: "Onsen con bebé", en: "Onsen with a baby" }, d: { es: "En el ryokan de Gero reserven onsen privado (kashikiri / habitación con baño termal) para bañarse en familia.", en: "At the ryokan in Gero book a private onsen (kashikiri / room with thermal bath) to bathe as a family." } },
     { t: { es: "Trenes gratis", en: "Free trains" }, d: { es: "Los menores de 6 años viajan gratis en tren (sin asiento propio).", en: "Under-6s travel free on trains (no own seat)." } },
     { t: { es: "Calor y tifones", en: "Heat & typhoons" }, d: { es: "Fin de agosto y septiembre son calurosos y húmedos, con riesgo de tifón. Hidratación, sombra y plan B techado.", en: "Late August and September are hot and humid, with typhoon risk. Hydration, shade and an indoor plan B." } }
   ],
