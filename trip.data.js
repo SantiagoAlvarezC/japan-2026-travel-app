@@ -45,7 +45,7 @@ window.TRIP = {
   route: [
     { kanji: "阪", city: "Osaka",    dates: { es: "28 – 31 Ago", en: "28 – 31 Aug" }, nights: { es: "3 noches", en: "3 nights" }, color: "#c13b2f" },
     { kanji: "京", city: "Kyoto",    dates: { es: "31 Ago – 3 Sep", en: "31 Aug – 3 Sep" }, nights: { es: "3 noches", en: "3 nights" }, color: "#1f3a52" },
-    { kanji: "飛", city: { es: "Takayama / Alpes", en: "Takayama / Alps" }, dates: { es: "3 – 5 Sep", en: "3 – 5 Sep" }, nights: { es: "2 noches · ryokan", en: "2 nights · ryokan" }, color: "#5a7d4f" },
+    { kanji: "飛", city: { es: "Takayama (día) / Gero Onsen (noches)", en: "Takayama (day) / Gero Onsen (nights)" }, dates: { es: "3 – 5 Sep", en: "3 – 5 Sep" }, nights: { es: "2 noches · ryokan en Gero", en: "2 nights · ryokan in Gero" }, color: "#5a7d4f" },
     { kanji: "東", city: "Tokyo",    dates: { es: "5 – 11 Sep", en: "5 – 11 Sep" }, nights: { es: "6 noches", en: "6 nights" }, color: "#3a3128" }
   ],
 
@@ -146,40 +146,44 @@ window.TRIP = {
       acts: [
         { time: "07:15", type: "🍜", text: { es: "Desayuno + check-out", en: "Breakfast + check-out" }, note: { es: "Mochilas listas", en: "Bags ready" } },
         { time: "08:31", type: "🚆", text: { es: "Hida directo Kyoto → Takayama", en: "Hida limited express Kyoto → Takayama" }, note: { es: "3h40 · ¥11,260 · llega 12:14", en: "3h40 · ¥11,260 · arrives 12:14" } },
-        { time: "12:30", type: "🍜", text: { es: "Almuerzo en Takayama (¡Hida beef!)", en: "Lunch in Takayama (Hida beef!)" }, note: { es: "Dejar mochilas", en: "Drop the bags" } },
+        { time: "12:30", type: "🍜", text: { es: "Almuerzo en Takayama (¡Hida beef!)", en: "Lunch in Takayama (Hida beef!)" }, note: { es: "Guardar mochilas en lockers de la estación", en: "Stash bags in station lockers" } },
         { time: "14:00", type: "📍", text: { es: "Sanmachi Suji — casco antiguo Edo (+ Takayama Jinya opcional)", en: "Sanmachi Suji — old Edo quarter (+ Takayama Jinya optional)" }, note: { es: "Casas de madera, sake", en: "Wooden houses, sake" } },
-        { time: "16:00", type: "♨️", text: { es: "Check-in RYOKAN tradicional", en: "Check-in traditional RYOKAN" }, note: { es: "Tatami, futón — la inmersión", en: "Tatami, futon — the real thing" } },
-        { time: "17:30", type: "♨️", text: { es: "Onsen del ryokan", en: "Ryokan onsen" }, note: { es: "Japón de antaño", en: "Old Japan" } },
-        { time: "19:00", type: "🍜", text: { es: "Cena kaiseki en el ryokan (Hida beef)", en: "Kaiseki dinner at the ryokan (Hida beef)" }, note: { es: "Incluida", en: "Included" } },
+        { time: "16:00", type: "🚆", text: { es: "Recoger mochilas. Tren Takayama → Gero", en: "Grab bags. Train Takayama → Gero" }, note: { es: "Hida/local, ~45 min", en: "Hida/local, ~45 min" } },
+        { time: "17:00", type: "♨️", text: { es: "Check-in RYOKAN tradicional (en GERO, no Takayama)", en: "Check-in traditional RYOKAN (in GERO, not Takayama)" }, note: { es: "9 min a pie desde la estación de Gero", en: "9 min walk from Gero station" } },
+        { time: "18:00", type: "♨️", text: { es: "Onsen del ryokan", en: "Ryokan onsen" }, note: { es: "Japón de antaño", en: "Old Japan" } },
+        { time: "19:30", type: "🍜", text: { es: "Cena kaiseki en el ryokan (Hida beef)", en: "Kaiseki dinner at the ryokan (Hida beef)" }, note: { es: "Incluida", en: "Included" } },
         { time: "21:30", type: "😴", text: { es: "Dormir en futón sobre tatami", en: "Sleep on a futon over tatami" }, note: { es: "", en: "" } }
       ],
-      note: { es: "El tren Hida sale pocas veces al día — reservar asiento.", en: "The Hida runs only a few times a day — reserve seats." },
+      note: { es: "El tren Hida sale pocas veces al día — reservar asiento. Entre Takayama y Gero también hay trenes locales de la misma línea, con más margen de horario.", en: "The Hida runs only a few times a day — reserve seats. Local trains on the same line also run between Takayama and Gero, giving more scheduling flexibility." },
       baby: { es: "Reserven habitación con onsen privado (kashikiri) para bañarse con Nico.", en: "Book a room with a private onsen (kashikiri) to bathe with Nico." } },
 
     { n: 8, date: { es: "Vie 4 Sep", en: "Fri 4 Sep" }, dateISO: "2026-09-04", city: { es: "SHIRAKAWA-GO", en: "SHIRAKAWA-GO" }, color: "#5a7d4f",
       title: { es: "Aldea Patrimonio UNESCO", en: "UNESCO heritage village" },
       acts: [
-        { time: "07:30", type: "🍜", text: { es: "Mercado matutino de Takayama (opcional) + desayuno", en: "Takayama morning market (optional) + breakfast" }, note: { es: "Miyagawa, junto al río", en: "Miyagawa, by the river" } },
+        { time: "06:45", type: "🍜", text: { es: "Desayuno en el ryokan (Gero, incluido)", en: "Breakfast at the ryokan (Gero, included)" }, note: { es: "", en: "" } },
+        { time: "07:15", type: "🚆", text: { es: "Tren Gero → Takayama", en: "Train Gero → Takayama" }, note: { es: "Hida/local, ~45 min", en: "Hida/local, ~45 min" } },
+        { time: "08:00", type: "🍜", text: { es: "Mercado matutino de Takayama (opcional)", en: "Takayama morning market (optional)" }, note: { es: "Miyagawa, junto al río", en: "Miyagawa, by the river" } },
         { time: "08:50", type: "🚌", text: { es: "Bus Takayama → Shirakawa-go", en: "Bus Takayama → Shirakawa-go" }, note: { es: "50 min · reservar bus", en: "50 min · reserve the bus" } },
         { time: "09:45", type: "📍", text: { es: "Shirakawa-go — casas gassho-zukuri", en: "Shirakawa-go — gassho-zukuri houses" }, note: { es: "Verde en sep. Mirador Shiroyama", en: "Green in Sep. Shiroyama viewpoint" } },
         { time: "12:30", type: "🍜", text: { es: "Almuerzo (soba, gohei mochi)", en: "Lunch (soba, gohei mochi)" }, note: { es: "Nico siesta en cochecito, pasean el pueblo", en: "Nico naps in stroller, stroll the village" } },
         { time: "15:00", type: "🚌", text: { es: "Bus de vuelta a Takayama", en: "Bus back to Takayama" }, note: { es: "50 min", en: "50 min" } },
-        { time: "17:00", type: "♨️", text: { es: "Onsen + descanso en el ryokan", en: "Onsen + rest at the ryokan" }, note: { es: "", en: "" } },
-        { time: "19:00", type: "🍜", text: { es: "Cena en Takayama", en: "Dinner in Takayama" }, note: { es: "Hida beef de nuevo, vale la pena", en: "Hida beef again, worth it" } }
-      ], note: { es: "Última noche en los Alpes. Mañana, sábado: a Tokio + Daikoku.", en: "Last night in the Alps. Tomorrow, Saturday: to Tokyo + Daikoku." } },
+        { time: "16:00", type: "🚆", text: { es: "Tren Takayama → Gero", en: "Train Takayama → Gero" }, note: { es: "Hida/local, ~45 min", en: "Hida/local, ~45 min" } },
+        { time: "17:00", type: "♨️", text: { es: "Onsen + descanso en el ryokan (Gero)", en: "Onsen + rest at the ryokan (Gero)" }, note: { es: "", en: "" } },
+        { time: "19:00", type: "🍜", text: { es: "Cena kaiseki en el ryokan (incluida)", en: "Kaiseki dinner at the ryokan (included)" }, note: { es: "Sin salir de nuevo — ya se comió Hida beef ayer", en: "No need to go out again — had Hida beef yesterday" } }
+      ], note: { es: "Última noche en los Alpes (durmiendo en Gero). Mañana, sábado: a Tokio + Daikoku, saliendo directo desde Gero.", en: "Last night in the Alps (sleeping in Gero). Tomorrow, Saturday: to Tokyo + Daikoku, departing straight from Gero." } },
 
     { n: 9, date: { es: "Sáb 5 Sep", en: "Sat 5 Sep" }, dateISO: "2026-09-05", city: { es: "TAKAYAMA → TOKYO", en: "TAKAYAMA → TOKYO" }, color: "#3a3128",
       title: { es: "A Tokio + Daikoku PA (sábado)", en: "To Tokyo + Daikoku PA (Saturday)" },
       acts: [
-        { time: "07:00", type: "🍜", text: { es: "Desayuno + check-out del ryokan", en: "Breakfast + check out of the ryokan" }, note: { es: "Salir temprano", en: "Leave early" } },
-        { time: "08:30", type: "🚆", text: { es: "Hida Takayama → Nagoya", en: "Hida Takayama → Nagoya" }, note: { es: "~2h20", en: "~2h20" } },
-        { time: "11:15", type: "🚄", text: { es: "Shinkansen Nagoya → Tokio", en: "Shinkansen Nagoya → Tokyo" }, note: { es: "~1h40 · llega ~13:00 · ekiben", en: "~1h40 · arrives ~13:00 · ekiben" } },
-        { time: "13:45", type: "📍", text: { es: "Check-in Shinjuku, dejar maletas, descanso", en: "Check-in Shinjuku, drop bags, rest" }, note: { es: "", en: "" } },
+        { time: "07:00", type: "🍜", text: { es: "Desayuno + check-out del ryokan (Gero)", en: "Breakfast + check out of the ryokan (Gero)" }, note: { es: "Salir temprano", en: "Leave early" } },
+        { time: "08:30", type: "🚆", text: { es: "Hida directo Gero → Nagoya", en: "Hida direct Gero → Nagoya" }, note: { es: "~1h35 · se aborda en Gero, no hace falta volver a Takayama · confirmar horario exacto al reservar", en: "~1h35 · board at Gero, no need to backtrack to Takayama · confirm exact time when booking" } },
+        { time: "11:15", type: "🚄", text: { es: "Shinkansen Nagoya → Tokio", en: "Shinkansen Nagoya → Tokyo" }, note: { es: "~1h40 · llega ~13:00 · ekiben · más margen que antes gracias al tren directo desde Gero", en: "~1h40 · arrives ~13:00 · ekiben · extra buffer now thanks to boarding direct from Gero" } },
+        { time: "13:45", type: "📍", text: { es: "Check-in Asakusa (APA Kaminarimon), dejar maletas, descanso", en: "Check-in Asakusa (APA Kaminarimon), drop bags, rest" }, note: { es: "", en: "" } },
         { time: "16:30", type: "🏎", text: { es: "SANTIAGO: pickup en hotel → Daikoku PA", en: "SANTIAGO: hotel pickup → Daikoku PA" }, note: { es: "~A$300 · confirmar hora con el operador", en: "~A$300 · confirm time with operator" } },
         { time: "21:00", type: "🏎", text: { es: "Daikoku PA — encuentro JDM (sábado = más gente)", en: "Daikoku PA — JDM meet (Saturday = more cars)" }, note: { es: "GTR, Supra, RX-7. Tu noche", en: "GTR, Supra, RX-7. Your night" } }
       ],
       note: { es: "Daikoku en sábado, como querías. Toma el Hida de la mañana para llegar con margen.", en: "Daikoku on a Saturday, as wanted. Take the morning Hida to arrive with margin." },
-      baby: { es: "Geral y Nico: tarde tranquila en Shinjuku y cena temprana mientras Santiago sale.", en: "Geral and Nico: easy afternoon in Shinjuku and early dinner while Santiago heads out." } },
+      baby: { es: "Geral y Nico: tarde tranquila en Asakusa y cena temprana mientras Santiago sale.", en: "Geral and Nico: easy afternoon in Asakusa and early dinner while Santiago heads out." } },
 
     { n: 10, date: { es: "Dom 6 Sep", en: "Sun 6 Sep" }, dateISO: "2026-09-06", city: "TOKYO", color: "#3a3128",
       title: { es: "Asakusa, Harajuku y Shibuya", en: "Asakusa, Harajuku & Shibuya" },
@@ -279,7 +283,7 @@ window.TRIP = {
     { city: { es: "Takayama / Alpes", en: "Takayama / Alps" }, kanji: "飛", color: "#5a7d4f", places: [
       { id: "pl-tk_a1", name: "Sanmachi Suji", desc: { es: "Casco antiguo de Takayama", en: "Old town of Takayama" }, tag: { es: "Edo", en: "Edo" }, maps: "Sanmachi Suji, Takayama", lat: 36.1408, lng: 137.2580 },
       { id: "pl-tk_a2", name: "Shirakawa-go", desc: { es: "Aldea gassho-zukuri (UNESCO)", en: "Gassho-zukuri village (UNESCO)" }, tag: { es: "UNESCO", en: "UNESCO" }, maps: "Shirakawa-go", lat: 36.2575, lng: 136.9066 },
-      { id: "pl-tk_a3", name: { es: "Onsen del ryokan", en: "Ryokan onsen" }, desc: { es: "Aguas termales y kaiseki", en: "Hot springs & kaiseki" }, tag: { es: "♨ Onsen", en: "♨ Onsen" }, maps: "Takayama onsen ryokan", lat: 36.1430, lng: 137.2520 }
+      { id: "pl-tk_a3", name: { es: "Onsen del ryokan (Gero, no Takayama)", en: "Ryokan onsen (Gero, not Takayama)" }, desc: { es: "Ooedo Onsen Monogatari Gero Bekkan — aguas termales y kaiseki, ~45 min en tren desde Takayama", en: "Ooedo Onsen Monogatari Gero Bekkan — hot springs & kaiseki, ~45 min by train from Takayama" }, tag: { es: "♨ Onsen", en: "♨ Onsen" }, maps: "Ooedo Onsen Monogatari Gero Bekkan", lat: 35.8025, lng: 137.2505 }
     ]},
     { city: { es: "Tokyo y alrededores", en: "Tokyo & around" }, kanji: "東", color: "#3a3128", places: [
       { id: "pl-tk1", name: "Senso-ji", desc: { es: "Templo más antiguo, Asakusa", en: "Oldest temple, Asakusa" }, tag: { es: "Templo", en: "Temple" }, maps: "Senso-ji", lat: 35.7148, lng: 139.7967 },
@@ -312,10 +316,10 @@ window.TRIP = {
   /*  STAYS (Hospedaje) — status: todo | booked                             */
   /* ---------------------------------------------------------------------- */
   stays: [
-    { id: "stay-os", city: "OSAKA", dates: { es: "28–31 Ago", en: "28–31 Aug" }, name: { es: "Hotel en Namba/Shinsaibashi", en: "Hotel in Namba/Shinsaibashi" }, color: "#c13b2f", note: { es: "Cerca de Dotonbori y estación. Cochecito-friendly. Tarifa cancelable.", en: "Near Dotonbori & station. Stroller-friendly. Refundable rate." }, tags: [{ es: "3 noches", en: "3 nights" }, { es: "Céntrico", en: "Central" }], maps: "hotels Namba Osaka", status: "todo" },
-    { id: "stay-ky", city: "KYOTO", dates: { es: "31 Ago–4 Sep", en: "31 Aug–4 Sep" }, name: { es: "Hotel zona Estación de Kyoto", en: "Hotel near Kyoto Station" }, color: "#1f3a52", note: { es: "Bien conectado. Tarifa cancelable.", en: "Well connected. Refundable rate." }, tags: [{ es: "4 noches", en: "4 nights" }, { es: "Conectado", en: "Connected" }], maps: "hotels Kyoto Station", status: "todo" },
-    { id: "stay-ta", city: { es: "TAKAYAMA", en: "TAKAYAMA" }, dates: { es: "4–6 Sep", en: "4–6 Sep" }, name: { es: "Ryokan tradicional con onsen ♨", en: "Traditional ryokan with onsen ♨" }, color: "#5a7d4f", note: { es: "Onsen + cena kaiseki incluida. Se agotan — reservar ya.", en: "Onsen + kaiseki dinner included. Sells out — book now." }, tags: [{ es: "2 noches", en: "2 nights" }, { es: "Onsen", en: "Onsen" }, { es: "Kaiseki", en: "Kaiseki" }], maps: "ryokan Takayama onsen", status: "todo" },
-    { id: "stay-tk", city: "TOKYO", dates: { es: "6–11 Sep", en: "6–11 Sep" }, name: { es: "Hotel en Shinjuku", en: "Hotel in Shinjuku" }, color: "#3a3128", note: { es: "Base bien conectada al metro. Tarifa cancelable.", en: "Metro-connected base. Refundable rate." }, tags: [{ es: "5 noches", en: "5 nights" }, { es: "Conectado", en: "Connected" }], maps: "hotels Shinjuku Tokyo", status: "todo" }
+    { id: "stay-os", city: "OSAKA", dates: { es: "28–31 Ago", en: "28–31 Aug" }, name: "Hearton Hotel Shinsaibashi", color: "#c13b2f", note: { es: "Conf: WG53TXK5RLC6 · Sur Shinsaibashi, cerca de Dotonbori. Tarifa cancelable.", en: "Conf: WG53TXK5RLC6 · South Shinsaibashi, near Dotonbori. Refundable rate." }, tags: [{ es: "3 noches", en: "3 nights" }, { es: "Shinsaibashi", en: "Shinsaibashi" }], maps: "Hearton Hotel Shinsaibashi Osaka", status: "booked" },
+    { id: "stay-ky", city: "KYOTO", dates: { es: "31 Ago–3 Sep", en: "31 Aug–3 Sep" }, name: "APA Hotel Kyoto Ekimae Chuoguchi", color: "#1f3a52", note: { es: "Conf: 3VP6FTDP2BPV · Frente a la Estación de Kyoto. Tarifa cancelable.", en: "Conf: 3VP6FTDP2BPV · Opposite Kyoto Station. Refundable rate." }, tags: [{ es: "3 noches", en: "3 nights" }, { es: "Estación", en: "Station" }], maps: "APA Hotel Kyoto Ekimae Chuoguchi", status: "booked" },
+    { id: "stay-ta", city: { es: "GERO (Onsen)", en: "GERO (Onsen)" }, dates: { es: "3–5 Sep", en: "3–5 Sep" }, name: "Ooedo Onsen Monogatari Gero Bekkan", color: "#5a7d4f", note: { es: "Conf: 5179.228.979 · Aguas termales de Gero, ~1h sur de Takayama. Onsen + kaiseki incluida. Tarifa cancelable.", en: "Conf: 5179.228.979 · Gero hot springs, ~1h south of Takayama. Onsen + kaiseki included. Refundable rate." }, tags: [{ es: "2 noches", en: "2 nights" }, { es: "Onsen", en: "Onsen" }, { es: "Kaiseki", en: "Kaiseki" }], maps: "Ooedo Onsen Monogatari Gero Bekkan", status: "booked" },
+    { id: "stay-tk", city: "TOKYO", dates: { es: "5–11 Sep", en: "5–11 Sep" }, name: "APA Hotel Asakusa Kaminarimon Minami", color: "#3a3128", note: { es: "Conf: 5203.022.412 · Asakusa, junto a la Puerta del Trueno. Tarifa cancelable.", en: "Conf: 5203.022.412 · Asakusa, by the Thunder Gate. Refundable rate." }, tags: [{ es: "6 noches", en: "6 nights" }, { es: "Asakusa", en: "Asakusa" }], maps: "APA Hotel Asakusa Kaminarimon Minami", status: "booked" }
   ],
 
   /* ---------------------------------------------------------------------- */
@@ -327,7 +331,8 @@ window.TRIP = {
     { from: "Osaka", to: "Nara", mode: "Kintetsu", time: "~35 min", cost: "¥680" },
     { from: "Nara", to: "Kyoto", mode: { es: "Kintetsu directo", en: "Kintetsu direct" }, time: "~45 min", cost: { es: "andén 3-4", en: "platform 3-4" } },
     { from: "Kyoto", to: "Takayama", mode: { es: "Hida (directo)", en: "Hida (direct)" }, time: "3h40", cost: "¥11,260" },
-    { from: "Takayama", to: "Tokyo", mode: { es: "Hida + Shinkansen", en: "Hida + Shinkansen" }, time: "4h20", cost: { es: "vía Nagoya", en: "via Nagoya" } },
+    { from: "Takayama", to: "Gero", mode: { es: "Hida / tren local", en: "Hida / local train" }, time: "~45 min", cost: { es: "ida y vuelta, 2 veces (noches 3 y 4 sep)", en: "round trip, twice (nights 3 & 4 sep)" } },
+    { from: "Gero", to: "Tokyo", mode: { es: "Hida + Shinkansen", en: "Hida + Shinkansen" }, time: "~3h35", cost: { es: "vía Nagoya · se aborda en Gero, no en Takayama", en: "via Nagoya · board at Gero, not Takayama" } },
     { from: { es: "Tokyo local", en: "Tokyo local" }, to: "(4 días)", mode: "Metro / Yamanote", time: { es: "~¥1,500/día", en: "~¥1,500/day" }, cost: "IC" },
     { from: "Tokyo", to: "Hakone", mode: "Odakyu Romance Car", time: "85 min", cost: "¥3,370" },
     { from: "Tokyo", to: "Himeji", mode: { es: "Shinkansen Hikari", en: "Shinkansen Hikari" }, time: "3h05", cost: { es: "vía Shin-Osaka", en: "via Shin-Osaka" } },
@@ -386,7 +391,7 @@ window.TRIP = {
     { id: "dc-2", label: { es: "eVISA Japón aprobada", en: "Japan eVISA approved" }, hint: { es: "evisa.mofa.go.jp · los 3 en una solicitud", en: "evisa.mofa.go.jp · all 3 in one application" } },
     { id: "dc-3", label: { es: "Vuelos ida y vuelta (JQ23/JQ24)", en: "Return flights (JQ23/JQ24)" }, hint: { es: "ref SPBPNW · PDF offline", en: "ref SPBPNW · offline PDF" } },
     { id: "dc-4", label: { es: "Reservas de hospedaje", en: "Accommodation bookings" }, hint: { es: "las 4 ciudades", en: "all 4 cities" } },
-    { id: "dc-5", label: { es: "Seguro de viaje", en: "Travel insurance" }, hint: { es: "cobertura médica + bebé", en: "medical cover + baby" } },
+    { id: "dc-5", label: { es: "Seguro de viaje", en: "Travel insurance" }, hint: { es: "activar CommBank Smart Awards antes de salir · cobertura médica + bebé", en: "activate CommBank Smart Awards before departure · medical cover + baby" } },
     { id: "dc-6", label: { es: "Visit Japan Web", en: "Visit Japan Web" }, hint: { es: "migración y aduana", en: "immigration & customs" } },
     { id: "dc-7", label: { es: "Prueba de residencia QLD", en: "QLD residency proof" }, hint: { es: "para la eVISA", en: "for the eVISA" } },
     { id: "dc-8", label: { es: "Extracto bancario 3 meses", en: "3-month bank statement" }, hint: { es: "para la eVISA", en: "for the eVISA" } },
@@ -398,13 +403,13 @@ window.TRIP = {
   /* ---------------------------------------------------------------------- */
   reservas: [
     { id: "rv-1", type: { es: "✈ Vuelo de ida", en: "✈ Outbound flight" }, color: "#3a3128", title: "JQ23 · BNE → KIX", sub: { es: "28 Ago · 11:40 → 19:45", en: "28 Aug · 11:40 → 19:45" }, code: "SPBPNW", status: "booked" },
-    { id: "rv-2", type: "🏨 Osaka", color: "#c13b2f", title: { es: "Hotel en Namba", en: "Hotel in Namba" }, sub: { es: "28–31 Ago · por reservar", en: "28–31 Aug · to book" }, code: "—", jp: "大阪市中央区難波", status: "todo" },
-    { id: "rv-3", type: "🏨 Kyoto", color: "#1f3a52", title: { es: "Hotel zona Estación", en: "Hotel near Station" }, sub: { es: "31 Ago–3 Sep · por reservar", en: "31 Aug–3 Sep · to book" }, code: "—", jp: "京都市下京区", status: "todo" },
-    { id: "rv-4", type: "♨ Takayama", color: "#5a7d4f", title: { es: "Ryokan con onsen", en: "Ryokan with onsen" }, sub: { es: "3–5 Sep · ¡se agotan!", en: "3–5 Sep · sells out!" }, code: "—", jp: "岐阜県高山市", status: "todo" },
-    { id: "rv-5", type: "🏨 Tokyo", color: "#3a3128", title: { es: "Hotel en Shinjuku", en: "Hotel in Shinjuku" }, sub: { es: "5–11 Sep · por reservar", en: "5–11 Sep · to book" }, code: "—", jp: "東京都新宿区", status: "todo" },
+    { id: "rv-2", type: "🏨 Osaka", color: "#c13b2f", title: "Hearton Hotel Shinsaibashi", sub: { es: "28–31 Ago · 3 noches", en: "28–31 Aug · 3 nights" }, code: "WG53TXK5RLC6", jp: "大阪府大阪市中央区南船場4-4-3", status: "booked" },
+    { id: "rv-3", type: "🏨 Kyoto", color: "#1f3a52", title: "APA Hotel Kyoto Ekimae Chuoguchi", sub: { es: "31 Ago–3 Sep · 3 noches", en: "31 Aug–3 Sep · 3 nights" }, code: "3VP6FTDP2BPV", jp: "京都府京都市下京区西洞院通七条上ル", status: "booked" },
+    { id: "rv-4", type: "♨ Gero", color: "#5a7d4f", title: "Ooedo Onsen Monogatari Gero Bekkan", sub: { es: "3–5 Sep · 2 noches · onsen incl.", en: "3–5 Sep · 2 nights · onsen incl." }, code: "5179.228.979", jp: "岐阜県下呂市森2554-3", status: "booked" },
+    { id: "rv-5", type: "🏨 Tokyo", color: "#3a3128", title: "APA Hotel Asakusa Kaminarimon Minami", sub: { es: "5–11 Sep · 6 noches · Asakusa", en: "5–11 Sep · 6 nights · Asakusa" }, code: "5203.022.412", jp: "東京都台東区雷門2-1-16", status: "booked" },
     { id: "rv-6", type: "🎟 teamLab", color: "#1f3a52", title: { es: "teamLab (día 12)", en: "teamLab (day 12)" }, sub: { es: "reservar con semanas", en: "book weeks ahead" }, code: "—", status: "todo" },
     { id: "rv-7", type: "🚆 Hida", color: "#5a7d4f", title: { es: "Kyoto → Takayama (día 7)", en: "Kyoto → Takayama (day 7)" }, sub: { es: "asiento reservado, 1 mes antes", en: "reserved seat, 1 month ahead" }, code: "—", status: "todo" },
-    { id: "rv-8", type: "🚄 Shinkansen", color: "#3a3128", title: { es: "Takayama→Tokyo (día 9) y Tokyo→Himeji (día 15)", en: "Takayama→Tokyo (day 9) & Tokyo→Himeji (day 15)" }, sub: { es: "asiento pasillo para Nico", en: "aisle seat for Nico" }, code: "—", status: "todo" },
+    { id: "rv-8", type: "🚄 Shinkansen", color: "#3a3128", title: { es: "Gero→Tokyo (día 9) y Tokyo→Himeji (día 15)", en: "Gero→Tokyo (day 9) & Tokyo→Himeji (day 15)" }, sub: { es: "el Hida del día 9 se aborda en Gero, no en Takayama · asiento pasillo para Nico", en: "day 9's Hida is boarded at Gero, not Takayama · aisle seat for Nico" }, code: "—", status: "todo" },
     { id: "rv-9", type: "🏎 Daikoku PA", color: "#c13b2f", title: { es: "Tour JDM (Santiago, día 9 · sábado)", en: "JDM tour (Santiago, day 9 · Saturday)" }, sub: { es: "~A$300 · confirmar hora de pickup vía amiga", en: "~A$300 · confirm pickup time via friend" }, code: "—", status: "todo" },
     { id: "rv-10", type: "🚌 Bus", color: "#5a7d4f", title: { es: "Takayama → Shirakawa-go (día 8)", en: "Takayama → Shirakawa-go (day 8)" }, sub: { es: "se llena en temporada", en: "fills up in season" }, code: "—", status: "todo" },
     { id: "rv-11", type: "🚆 Romance Car", color: "#3a3128", title: { es: "Hakone ida y vuelta (día 11)", en: "Hakone return (day 11)" }, sub: { es: "Odakyu · reservar", en: "Odakyu · reserve" }, code: "—", status: "todo" },
@@ -416,16 +421,16 @@ window.TRIP = {
   /* ---------------------------------------------------------------------- */
   prepItems: [
     { id: "pr-1", priority: "red", label: { es: "Aplicar eVISA (los 3, una cuenta)", en: "Apply for eVISA (all 3, one account)" } },
-    { id: "pr-2", priority: "red", label: { es: "Reservar hotel Osaka (3 noches)", en: "Book Osaka hotel (3 nights)" } },
-    { id: "pr-3", priority: "red", label: { es: "Reservar hotel Kyoto (3 noches)", en: "Book Kyoto hotel (3 nights)" } },
-    { id: "pr-4", priority: "red", label: { es: "Reservar RYOKAN Takayama (se agota)", en: "Book Takayama RYOKAN (sells out)" } },
-    { id: "pr-5", priority: "red", label: { es: "Reservar hotel Tokyo (6 noches)", en: "Book Tokyo hotel (6 nights)" } },
+    { id: "pr-2", priority: "green", label: { es: "Hotel Osaka: Hearton Shinsaibashi ✓ WG53TXK5RLC6", en: "Osaka hotel: Hearton Shinsaibashi ✓ WG53TXK5RLC6" } },
+    { id: "pr-3", priority: "green", label: { es: "Hotel Kyoto: APA Ekimae Chuoguchi ✓ 3VP6FTDP2BPV", en: "Kyoto hotel: APA Ekimae Chuoguchi ✓ 3VP6FTDP2BPV" } },
+    { id: "pr-4", priority: "green", label: { es: "Ryokan Gero: Ooedo Onsen Monogatari ✓ 5179.228.979", en: "Gero ryokan: Ooedo Onsen Monogatari ✓ 5179.228.979" } },
+    { id: "pr-5", priority: "green", label: { es: "Hotel Tokyo: APA Asakusa Kaminarimon ✓ 5203.022.412", en: "Tokyo hotel: APA Asakusa Kaminarimon ✓ 5203.022.412" } },
     { id: "pr-6", priority: "red", label: { es: "Reservar teamLab (se agota)", en: "Book teamLab (sells out)" } },
     { id: "pr-7", priority: "yellow", label: { es: "Reservar tren Hida a Takayama", en: "Reserve Hida train to Takayama" } },
     { id: "pr-8", priority: "yellow", label: { es: "Reservar Shinkansen Takayama→Tokyo y Tokyo→Himeji", en: "Reserve Shinkansen Takayama→Tokyo & Tokyo→Himeji" } },
     { id: "pr-9", priority: "yellow", label: { es: "Confirmar Daikoku PA con amiga", en: "Confirm Daikoku PA via friend" } },
     { id: "pr-10", priority: "yellow", label: { es: "eSIM (app Airalo)", en: "eSIM (Airalo app)" } },
-    { id: "pr-11", priority: "yellow", label: { es: "Contratar seguro de viaje", en: "Buy travel insurance" } },
+    { id: "pr-11", priority: "red", label: { es: "Activar seguro de viaje CommBank Smart Awards (antes del 28 ago)", en: "Activate CommBank Smart Awards travel insurance (before 28 Aug)" } },
     { id: "pr-12", priority: "green", label: { es: "Romance Car Hakone (día 11)", en: "Hakone Romance Car (day 11)" } },
     { id: "pr-13", priority: "green", label: { es: "Reservar bus Takayama→Shirakawa-go", en: "Reserve Takayama→Shirakawa-go bus" } },
     { id: "pr-14", priority: "green", label: { es: "Goshuin-cho (libreta de sellos)", en: "Goshuin-cho (stamp book)" } },
@@ -503,7 +508,7 @@ window.TRIP = {
   healthInfo: [
     { city: "Osaka", kanji: "阪", color: "#c13b2f", note: { es: "Hospital municipal con urgencias pediátricas. Farmacias (薬局) en cada esquina.", en: "City hospital with pediatric ER. Pharmacies (薬局) on every corner." } },
     { city: "Kyoto", kanji: "京", color: "#1f3a52", note: { es: "Kyoto University Hospital. Clínicas pediátricas (小児科) cerca del centro.", en: "Kyoto University Hospital. Pediatric clinics (小児科) near the centre." } },
-    { city: "Takayama", kanji: "飛", color: "#5a7d4f", note: { es: "Zona rural: el ryokan ayuda a contactar la clínica más cercana.", en: "Rural area: the ryokan helps contact the nearest clinic." } },
+    { city: { es: "Takayama / Gero", en: "Takayama / Gero" }, kanji: "飛", color: "#5a7d4f", note: { es: "Zona rural: duermen en Gero, no en Takayama — el ryokan ayuda a contactar la clínica más cercana en Gero.", en: "Rural area: you sleep in Gero, not Takayama — the ryokan helps contact the nearest clinic in Gero." } },
     { city: "Tokyo", kanji: "東", color: "#3a3128", note: { es: "Hospitales con servicio en inglés (St. Luke's, Tokyo Medical). Línea multilingüe AMDA.", en: "Hospitals with English service (St. Luke's, Tokyo Medical). AMDA multilingual line." } }
   ],
   emergencyPhrases: [
@@ -615,11 +620,63 @@ window.TRIP = {
   ],
 
   /* ---------------------------------------------------------------------- */
+  /*  VISA                                                                  */
+  /* ---------------------------------------------------------------------- */
+  visa: {
+    url: "https://evisa.mofa.go.jp",
+    category: { es: "Temporary Visitor", en: "Temporary Visitor" },
+    processingNote: { es: "Procesamiento ≥2 semanas (más en temporada alta). Solicitar cuanto antes.", en: "Processing ≥2 weeks (longer in peak season). Apply as soon as possible." },
+    warning: { es: "⚠️ En embarque: mostrar el QR abierto EN VIVO en evisa.mofa.go.jp. NUNCA captura o PDF.", en: "⚠️ At boarding: show QR live on evisa.mofa.go.jp. NEVER a screenshot or PDF." },
+    persons: [
+      { id: "vi-santi", name: "Santiago", role: { es: "Titular + Garante financiero", en: "Applicant + Financial guarantor" }, color: "#1f3a52",
+        docs: [
+          { id: "vd-s1", label: { es: "Pasaporte colombiano vigente", en: "Valid Colombian passport" } },
+          { id: "vd-s2", label: { es: "Foto facial fondo blanco", en: "White-background facial photo" } },
+          { id: "vd-s3", label: { es: "Extractos bancarios 3 meses (ahorros, no tarjeta)", en: "3-month bank statements (savings, not credit card)" } },
+          { id: "vd-s4", label: { es: "VEVO — prueba visa 482 Australia", en: "VEVO — Australian 482 visa proof" } },
+          { id: "vd-s5", label: { es: "Confirmación vuelos JQ23/JQ24 (ref SPBPNW)", en: "Flight confirmation JQ23/JQ24 (ref SPBPNW)" } },
+          { id: "vd-s6", label: { es: "Schedule of Stay (itinerario completo con hoteles)", en: "Schedule of Stay (full itinerary with hotels)" } }
+        ]
+      },
+      { id: "vi-geral", name: "Geral", role: { es: "Titular (apoderado: Santiago)", en: "Applicant (proxy: Santiago)" }, color: "#c13b2f",
+        docs: [
+          { id: "vd-g1", label: { es: "Pasaporte colombiano vigente", en: "Valid Colombian passport" } },
+          { id: "vd-g2", label: { es: "Foto facial fondo blanco", en: "White-background facial photo" } },
+          { id: "vd-g3", label: { es: "VEVO — prueba visa 482 Australia", en: "VEVO — Australian 482 visa proof" } },
+          { id: "vd-g4", label: { es: "Acta de matrimonio", en: "Marriage certificate" } },
+          { id: "vd-g5", label: { es: "Pasaporte del garante (Santiago)", en: "Guarantor's passport (Santiago)" } },
+          { id: "vd-g6", label: { es: "Letter of Authorization (original firmada a mano)", en: "Letter of Authorization (original hand-signed)" } },
+          { id: "vd-g7", label: { es: "Schedule of Stay", en: "Schedule of Stay" } }
+        ]
+      },
+      { id: "vi-nico", name: "Nico", role: { es: "Menor de edad (aplica un padre)", en: "Minor (parent applies)" }, color: "#5a7d4f",
+        docs: [
+          { id: "vd-n1", label: { es: "Pasaporte colombiano vigente", en: "Valid Colombian passport" } },
+          { id: "vd-n2", label: { es: "Foto facial fondo blanco", en: "White-background facial photo" } },
+          { id: "vd-n3", label: { es: "Registro de nacimiento + traducción al inglés", en: "Birth certificate + English translation" } },
+          { id: "vd-n4", label: { es: "VEVO — prueba visa 482 Australia", en: "VEVO — Australian 482 visa proof" } },
+          { id: "vd-n5", label: { es: "Letter of Authorization (confirmar firma bebé con consulado)", en: "Letter of Authorization (confirm baby signature with consulate)" } },
+          { id: "vd-n6", label: { es: "Schedule of Stay", en: "Schedule of Stay" } }
+        ]
+      }
+    ],
+    reminders: [
+      { icon: "🕐", text: { es: "Solicitar pronto — procesamiento ≥2 semanas en temporada alta", en: "Apply soon — ≥2 weeks processing in peak season" } },
+      { icon: "🚫", text: { es: "NUNCA escribir \"sightseeing\" en el itinerario — actividades concretas", en: "NEVER write \"sightseeing\" in the itinerary — specific activities" } },
+      { icon: "📱", text: { es: "QR en aeropuerto: ABRIR EN VIVO en el sitio. No captura. No PDF.", en: "QR at airport: OPEN LIVE on the website. No screenshot. No PDF." } },
+      { icon: "🏦", text: { es: "Extractos: cuenta de ahorros. Tarjetas de crédito NO son válidas.", en: "Statements: savings account. Credit cards are NOT valid." } },
+      { icon: "🇦🇺", text: { es: "Permanecer en Australia hasta tener la visa aprobada", en: "Stay in Australia until the visa is approved" } },
+      { icon: "📬", text: { es: "Consultas: visasection@bb.mofa.go.jp (caso de Nico, firma bebé)", en: "Queries: visasection@bb.mofa.go.jp (Nico's case, baby signature)" } }
+    ]
+  },
+
+  /* ---------------------------------------------------------------------- */
   /*  MORE MENU + BOTTOM NAV                                                */
   /* ---------------------------------------------------------------------- */
   moreItems: [
     { kanji: "記", title: { es: "Diario de viaje", en: "Travel diary" }, sub: { es: "recuerdos y fotos por día", en: "memories & photos by day" }, color: "#5a7d4f", screen: "diario" },
     { kanji: "備", title: { es: "Pendientes", en: "To-do" }, sub: { es: "visa, hoteles, reservas", en: "visa, hotels, bookings" }, color: "#c9a24a", screen: "pendientes" },
+    { kanji: "査", title: { es: "Visa Japón", en: "Japan Visa" }, sub: { es: "eVISA · documentos · estado", en: "eVISA · documents · status" }, color: "#1f3a52", screen: "visa" },
     { kanji: "翻", title: { es: "Asistente IA", en: "AI Assistant" }, sub: { es: "chat · traduce menús y carteles", en: "chat · translate menus & signs" }, color: "#c13b2f", screen: "asistente" },
     { kanji: "食", title: { es: "Comida", en: "Food" }, sub: { es: "platos imperdibles", en: "must-eat dishes" }, color: "#c13b2f", screen: "comida" },
     { kanji: "宿", title: { es: "Hospedajes", en: "Stays" }, sub: { es: "dónde dormimos", en: "where we sleep" }, color: "#1f3a52", screen: "hotel" },

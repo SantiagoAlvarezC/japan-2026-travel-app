@@ -67,7 +67,7 @@
 "use strict";
 (function () {
   const T = window.TRIP;
-  const SUBSCREENS = ['diario','pendientes','asistente','comida','hotel','tren','maleta','frases','sellos','docs','bebe','reservas','presupuesto','emergencias','medica','backup'];
+  const SUBSCREENS = ['diario','pendientes','visa','asistente','comida','hotel','tren','maleta','frases','sellos','docs','bebe','reservas','presupuesto','emergencias','medica','backup'];
   const NAV_KEYS = ['inicio','plan','mapa','gastos','mas']; // order for swipe
   // transient AI chat state (not persisted — resets on reload)
   let chat = [];
@@ -413,7 +413,7 @@
   }
 
   function scrMapa() {
-    const legend = T.placeGroups.map(g => `<span style="display:inline-flex;align-items:center;gap:4px;margin:0 6px;"><span style="width:10px;height:10px;border-radius:50%;background:${g.color};display:inline-block;"></span>${esc(L(g.city))}</span>`).join('');
+    const legend = T.placeGroups.map((g, i) => `<span style="display:inline-flex;align-items:center;gap:5px;margin:0 6px;"><span style="width:18px;height:18px;border-radius:50%;background:${g.color};display:inline-flex;align-items:center;justify-content:center;color:#fff;font-size:10px;font-weight:700;">${i+1}</span>${esc(L(g.city))}</span>`).join('');
     const mapBlock = `<div style="padding:0 16px 6px;">
       <div id="mapcanvas"></div>
       <div style="font-size:11px;color:#9a8a6a;text-align:center;margin-top:8px;line-height:1.7;">
@@ -470,23 +470,27 @@
     elId = elId || 'mapcanvas';
     const el = document.getElementById(elId);
     if (!el) return;
-    ensureLeaflet().then(L => {
+    ensureLeaflet().then(Lfl => {
       if (!document.body.contains(el)) return; // user navigated away while loading
       if (leafletInstances[elId]) { try { leafletInstances[elId].remove(); } catch (e) {} delete leafletInstances[elId]; }
       if (isMain) { leafletMarkers = {}; leafletMap = null; }
-      const map = L.map(el, { zoomControl: !!isMain, attributionControl: true });
+      const map = Lfl.map(el, { zoomControl: !!isMain, attributionControl: true });
       leafletInstances[elId] = map;
       if (isMain) leafletMap = map;
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19, attribution: '&copy; OpenStreetMap' }).addTo(map);
+      Lfl.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', { maxZoom: 19, attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>', subdomains: 'abcd' }).addTo(map);
       const pts = [];
-      T.placeGroups.forEach(g => {
-        (g.places || []).forEach(p => {
-          if (typeof p.lat !== 'number' || typeof p.lng !== 'number') return;
+      const cityCentroids = [];
+      T.placeGroups.forEach((g, gi) => {
+        const gPlaces = (g.places || []).filter(p => typeof p.lat === 'number' && typeof p.lng === 'number');
+        if (gPlaces.length) {
+          cityCentroids.push([gPlaces.reduce((s,p) => s+p.lat, 0)/gPlaces.length, gPlaces.reduce((s,p) => s+p.lng, 0)/gPlaces.length]);
+        }
+        gPlaces.forEach(p => {
           const done = !!S.checks[p.id];
           const color = done ? '#5a7d4f' : g.color;
-          const icon = L.divIcon({ className: '', iconSize: [24, 24], iconAnchor: [12, 24], popupAnchor: [0, -24],
-            html: `<div class="mpin" style="width:24px;height:24px;background:${color};"><span>${done ? '✓' : esc(g.kanji)}</span></div>` });
-          const m = L.marker([p.lat, p.lng], { icon }).addTo(map);
+          const icon = Lfl.divIcon({ className: '', iconSize: [24, 24], iconAnchor: [12, 24], popupAnchor: [0, -24],
+            html: `<div class="mpin" style="width:24px;height:24px;background:${color};"><span>${done ? '✓' : (gi + 1)}</span></div>` });
+          const m = Lfl.marker([p.lat, p.lng], { icon }).addTo(map);
           m.bindPopup(`<div style="min-width:150px;">
             <div style="font-weight:700;font-size:14px;margin-bottom:2px;">${esc(L(p.name))}</div>
             <div style="font-size:12px;color:#6b5f4c;margin-bottom:8px;">${esc(L(p.desc))}</div>
@@ -498,6 +502,7 @@
           pts.push([p.lat, p.lng]);
         });
       });
+      if (cityCentroids.length > 1) Lfl.polyline(cityCentroids, { color: '#c9a24a', weight: 2.5, dashArray: '7 5', opacity: 0.8 }).addTo(map);
       if (isMain && leafletView) map.setView(leafletView.center, leafletView.zoom);
       else if (pts.length) map.fitBounds(pts, { padding: [30, 30] });
       else map.setView([35.0, 136.0], 5);
@@ -897,6 +902,66 @@
        <div class="secttl" style="margin:14px 0 8px;">${tr('FRASES DE EMERGENCIA', 'EMERGENCY PHRASES')}</div>${phr}`);
   }
 
+  function scrVisa() {
+    const V = T.visa;
+    const totalDocs = V.persons.reduce((s, p) => s + p.docs.length, 0);
+    const doneDocs = V.persons.reduce((s, p) => s + p.docs.filter(d => S.checks[d.id]).length, 0);
+    const pct = totalDocs ? Math.round(doneDocs / totalDocs * 100) : 0;
+    const statusColor = pct === 100 ? '#5a7d4f' : pct > 40 ? '#c9a24a' : '#c13b2f';
+    const statusLabel = pct === 100 ? tr('¡Todo listo!', 'All set!') : pct > 0 ? tr('En progreso', 'In progress') : tr('Pendiente', 'Pending');
+
+    const progressBar = `<div style="background:#e8ddc8;border-radius:8px;height:8px;overflow:hidden;margin:8px 0 4px;">
+      <div style="width:${pct}%;background:${statusColor};height:100%;border-radius:8px;transition:width 0.3s;"></div></div>
+      <div style="font-size:11px;color:${statusColor};font-weight:700;">${doneDocs}/${totalDocs} ${tr('documentos listos', 'documents ready')} · ${statusLabel}</div>`;
+
+    const personCards = V.persons.map(p => {
+      const pd = p.docs.filter(d => S.checks[d.id]).length;
+      const pt = p.docs.length;
+      const pc = p.docs.map(d => {
+        const chk = !!S.checks[d.id];
+        return `<div class="tap" data-action="toggle" data-id="${d.id}" style="display:flex;align-items:flex-start;gap:10px;padding:7px 0;border-bottom:1px solid #f0e8d4;">
+          <div class="chk" style="background:${chk ? p.color : 'transparent'};border-color:${chk ? p.color : '#cdbfa0'};margin-top:1px;">${chk ? '✓' : ''}</div>
+          <div style="flex:1;font-size:13px;color:${chk ? '#9a8a6a' : '#2b2620'};text-decoration:${chk ? 'line-through' : 'none'};">${esc(L(d.label))}</div>
+        </div>`;
+      }).join('');
+      return `<div class="card" style="margin-bottom:12px;padding:14px 15px;">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
+          <div style="width:36px;height:36px;border-radius:50%;background:${p.color};color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:16px;flex:0 0 auto;">${esc(p.name[0])}</div>
+          <div style="flex:1;">
+            <div style="font-weight:700;font-size:14px;">${esc(p.name)}</div>
+            <div style="font-size:11px;color:#9a8a6a;">${esc(L(p.role))}</div>
+          </div>
+          <div style="font-size:11px;font-weight:700;color:${pd===pt ? '#5a7d4f' : p.color};">${pd}/${pt}</div>
+        </div>
+        ${pc}
+      </div>`;
+    }).join('');
+
+    const reminders = V.reminders.map(r => `<div style="display:flex;gap:10px;padding:9px 0;border-bottom:1px solid #f0e8d4;align-items:flex-start;">
+      <span style="font-size:16px;flex:0 0 auto;">${r.icon}</span>
+      <span style="font-size:12px;color:#2b2620;">${esc(L(r.text))}</span>
+    </div>`).join('');
+
+    return scrWrap(`
+      <div style="padding:20px 18px 4px;display:flex;align-items:center;gap:12px;">
+        <div style="width:44px;height:44px;border-radius:11px;background:#1f3a52;color:#f4ecdb;display:flex;align-items:center;justify-content:center;font-size:22px;flex:0 0 auto;">査</div>
+        <div>
+          <div style="font-size:20px;font-weight:700;">${tr('Visa Japón', 'Japan Visa')} · eVISA</div>
+          <div style="font-size:12px;color:#9a8a6a;">${esc(L(V.category))} · ${esc(L(V.processingNote))}</div>
+        </div>
+      </div>
+      <div style="padding:6px 18px 12px;">${progressBar}</div>
+      <div style="margin:0 18px 12px;padding:11px 13px;background:#fff3cd;border-radius:10px;border-left:3px solid #c13b2f;">
+        <div style="font-size:12px;font-weight:700;color:#c13b2f;">${esc(L(V.warning))}</div>
+      </div>
+      <div style="padding:0 18px 4px;"><div class="secttl">${tr('DOCUMENTOS POR PERSONA', 'DOCUMENTS BY PERSON')}</div></div>
+      <div style="padding:6px 18px 4px;">${personCards}</div>
+      <div style="padding:0 18px 4px;"><div class="secttl">${tr('RECORDATORIOS CLAVE', 'KEY REMINDERS')}</div></div>
+      <div class="card" style="margin:6px 18px 24px;padding:4px 14px;">
+        ${reminders}
+      </div>`);
+  }
+
   function scrPendientes() {
     const items = T.prepItems;
     const done = items.filter(i => S.checks[i.id]).length + (S.custom.prep || []).filter(i => S.checks[i.id]).length;
@@ -1012,7 +1077,7 @@
   }
 
   const RENDERERS = { inicio: scrInicio, plan: scrPlan, mapa: scrMapa, gastos: scrGastos, mas: scrMas,
-    pendientes: scrPendientes, asistente: scrAsistente, medica: scrMedica, comida: scrComida, hotel: scrHotel, tren: scrTren, maleta: scrMaleta, frases: scrFrases, sellos: scrSellos,
+    pendientes: scrPendientes, visa: scrVisa, asistente: scrAsistente, medica: scrMedica, comida: scrComida, hotel: scrHotel, tren: scrTren, maleta: scrMaleta, frases: scrFrases, sellos: scrSellos,
     docs: scrDocs, bebe: scrBebe, reservas: scrReservas, presupuesto: scrPresupuesto, emergencias: scrEmergencias, backup: scrBackup, diario: scrDiario };
 
   function renderOverlay() {
