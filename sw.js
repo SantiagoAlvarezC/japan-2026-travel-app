@@ -1,6 +1,6 @@
 /* Service worker — offline-first for the Japan 2026 trip app.
    Bump CACHE when you ship new app/data so clients refresh. */
-const CACHE = 'japon-2026-v12';
+const CACHE = 'japon-2026-v15';
 const ASSETS = [
   './',
   './index.html',

@@ -90,17 +90,20 @@ window.TRIP = {
       ], note: { es: "", en: "" } },
 
     { n: 3, date: { es: "Dom 30 Ago", en: "Sun 30 Aug" }, dateISO: "2026-08-30", city: "OSAKA", color: "#c13b2f",
-      title: { es: "Sur cultural de Osaka", en: "Cultural south Osaka" },
+      title: { es: "Universal Studios Japan", en: "Universal Studios Japan" },
       acts: [
-        { time: "08:30", type: "🍜", text: { es: "Desayuno", en: "Breakfast" }, note: { es: "", en: "" } },
-        { time: "09:30", type: "📍", text: { es: "Shitenno-ji — el templo más antiguo de Japón (593)", en: "Shitenno-ji — Japan's oldest temple (593)" }, note: { es: "Sello goshuin + jardín. Cochecito OK", en: "Goshuin stamp + garden. Stroller OK" } },
-        { time: "11:00", type: "🚋", text: { es: "Tranvía retro Hankai → Sumiyoshi Taisha", en: "Retro Hankai tram → Sumiyoshi Taisha" }, note: { es: "El tranvía ya es un paseo", en: "The tram ride is the experience" } },
-        { time: "11:30", type: "📍", text: { es: "Sumiyoshi Taisha — puente arqueado + sello", en: "Sumiyoshi Taisha — arched bridge + stamp" }, note: { es: "De los santuarios más antiguos", en: "One of Japan's oldest shrines" } },
-        { time: "13:00", type: "🍜", text: { es: "Almuerzo. Nico siesta en cochecito", en: "Lunch. Nico naps in stroller" }, note: { es: "", en: "" } },
-        { time: "14:30", type: "📍", text: { es: "Shinsekai + Tsutenkaku + Den Den Town", en: "Shinsekai + Tsutenkaku + Den Den Town" }, note: { es: "Osaka retro + anime/electrónica", en: "Retro Osaka + anime/electronics" } },
-        { time: "18:00", type: "🍜", text: { es: "Cena kushikatsu en Shinsekai", en: "Kushikatsu dinner in Shinsekai" }, note: { es: "~¥1,800 c/u", en: "~¥1,800 each" } },
-        { time: "20:30", type: "🎒", text: { es: "Empacar mochilas — mañana Nara + Kyoto", en: "Pack the backpacks — Nara + Kyoto tomorrow" }, note: { es: "Día de transición", en: "Transition day" } }
-      ], note: { es: "Templos + tranvía + barrio retro: cultura y ciudad de Osaka en un día.", en: "Temples + tram + retro quarter: Osaka culture and city in one day." } },
+        { time: "07:30", type: "🍜", text: { es: "Desayuno rápido + salir con la carriola", en: "Quick breakfast + head out with the stroller" }, note: { es: "Tren JR Yumesaki (transbordo en Nishikujo) ~20-25 min", en: "JR Yumesaki line (transfer at Nishikujo) ~20-25 min" } },
+        { time: "08:15", type: "🎢", text: { es: "Llegada a Universal Studios Japan", en: "Arrive at Universal Studios Japan" }, note: { es: "A veces abren hasta 30-60 min antes — bueno para fotos sin gente", en: "Sometimes opens 30-60 min early — good for people-free photos" } },
+        { time: "09:00", type: "📍", text: { es: "Super Nintendo World — Reino Champiñón, Castillo de Peach", en: "Super Nintendo World — Mushroom Kingdom, Peach's Castle" }, note: { es: "Pidan el Timed-Entry gratis en la app de USJ al entrar", en: "Grab the free Timed-Entry ticket in the USJ app on entry" } },
+        { time: "11:00", type: "📍", text: { es: "Wizarding World — Hogsmeade + Castillo de Hogwarts", en: "Wizarding World — Hogsmeade + Hogwarts Castle" }, note: { es: "Fotos, Ollivander's, tienda de dulces", en: "Photos, Ollivander's, sweet shop" } },
+        { time: "12:30", type: "🍜", text: { es: "Almuerzo dentro del parque", en: "Lunch inside the park" }, note: { es: "Food trucks temáticos", en: "Themed food trucks" } },
+        { time: "13:30", type: "📍", text: { es: "Universal Wonderland — Minion Park + zona de juegos de Nico", en: "Universal Wonderland — Minion Park + Nico's play area" }, note: { es: "Sala de lactancia/cambiador junto a Guest Services", en: "Nursing/changing room by Guest Services" } },
+        { time: "15:30", type: "📍", text: { es: "Hollywood Area — desfile/personajes si hay horario ese día", en: "Hollywood Area — parade/characters if scheduled that day" }, note: { es: "Revisar horario en la app al llegar", en: "Check the day's schedule in the app on arrival" } },
+        { time: "17:00", type: "😊", text: { es: "Tiempo libre sin afán — recorrer y fotos, sin filas largas", en: "Unhurried free time — walk around and take photos, skip long queues" }, note: { es: "Prioridad es conocer, no montarse en todo", en: "Priority is seeing it, not riding everything" } },
+        { time: "19:00", type: "🍜", text: { es: "Cena en Universal CityWalk (fuera del parque)", en: "Dinner at Universal CityWalk (outside the park)" }, note: { es: "", en: "" } },
+        { time: "20:30", type: "🚆", text: { es: "Vuelta al hotel", en: "Back to the hotel" }, note: { es: "", en: "" } }
+      ], note: { es: "Boleto 1-Day Studio Pass ~¥8,900 adulto (precio dinámico, domingo = más caro). Nico entra GRATIS por ser menor de 3 años. Como el plan es conocer y no hacer fila para montar, no compramos Express Pass — el Timed-Entry gratis por la app alcanza para entrar a Nintendo World.", en: "1-Day Studio Pass ~¥8,900 adult (dynamic pricing, Sunday = pricier). Nico gets in FREE (under 3). Since the plan is to see the park rather than queue for rides, skipping the paid Express Pass — the free app Timed-Entry ticket is enough to get into Nintendo World." },
+      baby: { es: "Llevan su propia carriola desde BNE — no hace falta rentar en el parque. Universal Wonderland tiene sala de lactancia, cambiador y agua caliente para biberón.", en: "Bringing your own stroller from BNE — no need to rent one at the park. Universal Wonderland has a nursing room, changing table and hot water for bottles." } },
 
     { n: 4, date: { es: "Lun 31 Ago", en: "Mon 31 Aug" }, dateISO: "2026-08-31", city: { es: "OSAKA → NARA → KYOTO", en: "OSAKA → NARA → KYOTO" }, color: "#1f3a52",
       title: { es: "Vía Nara hacia Kyoto", en: "Via Nara to Kyoto" },
@@ -194,8 +197,10 @@ window.TRIP = {
         { time: "12:30", type: "🍜", text: { es: "Almuerzo + crepes en Takeshita St", en: "Lunch + crepes on Takeshita St" }, note: { es: "Cultura pop", en: "Pop culture" } },
         { time: "14:30", type: "📍", text: { es: "Meiji Jingu + Parque Yoyogi + sello", en: "Meiji Jingu + Yoyogi Park + stamp" }, note: { es: "Nico siesta en cochecito acá. Sombra", en: "Nico naps in stroller here. Shade" } },
         { time: "17:00", type: "📍", text: { es: "Cruce de Shibuya + estatua de Hachiko", en: "Shibuya Crossing + Hachiko statue" }, note: { es: "Luz de tarde", en: "Evening light" } },
-        { time: "19:30", type: "🍜", text: { es: "Ichiran Ramen en Shinjuku", en: "Ichiran Ramen in Shinjuku" }, note: { es: "La experiencia ramen", en: "The ramen experience" } }
-      ], note: { es: "", en: "" } },
+        { time: "17:30", type: "🏎️", text: { es: "Check-in Street Kart Shibuya — traje + briefing", en: "Street Kart Shibuya check-in — costume + briefing" }, note: { es: "Santiago maneja (IDP obligatorio). Geral y Nico ven/graban", en: "Santiago drives (IDP required). Geral & Nico watch/film" } },
+        { time: "18:00", type: "🏎️", text: { es: "Tour en kart por Shibuya/Harajuku (~1h)", en: "Kart tour through Shibuya/Harajuku (~1h)" }, note: { es: "~AUD $150 + seguro opcional ~AUD $9", en: "~AUD $150 + optional insurance ~AUD $9" } },
+        { time: "20:00", type: "🍜", text: { es: "Ichiran Ramen en Shinjuku", en: "Ichiran Ramen in Shinjuku" }, note: { es: "La experiencia ramen", en: "The ramen experience" } }
+      ], note: { es: "Santiago necesita su IDP (RACQ, AUD $55) sacado en Australia ANTES de viajar — no se puede tramitar en Japón.", en: "Santiago needs his IDP (RACQ, AUD $55) obtained in Australia BEFORE travel — cannot be issued in Japan." } },
 
     { n: 11, date: { es: "Lun 7 Sep", en: "Mon 7 Sep" }, dateISO: "2026-09-07", city: { es: "TOKYO + HAKONE", en: "TOKYO + HAKONE" }, color: "#3a3128",
       title: { es: "Fuji y el torii flotante", en: "Fuji & the floating torii" },
@@ -266,9 +271,7 @@ window.TRIP = {
       { id: "pl-os1", name: "Dotonbori", desc: { es: "Luces, Glico y street food", en: "Lights, Glico & street food" }, tag: { es: "Noche", en: "Night" }, maps: "Dotonbori, Osaka", lat: 34.6687, lng: 135.5013 },
       { id: "pl-os2", name: { es: "Castillo de Osaka", en: "Osaka Castle" }, desc: { es: "Fortaleza histórica y jardines", en: "Historic fortress & gardens" }, tag: { es: "Historia", en: "History" }, maps: "Osaka Castle", lat: 34.6873, lng: 135.5259 },
       { id: "pl-os3", name: { es: "Mercado Kuromon", en: "Kuromon Market" }, desc: { es: "Mariscos y frutas frescas", en: "Fresh seafood & fruit" }, tag: { es: "Comida", en: "Food" }, maps: "Kuromon Ichiba Market", lat: 34.6655, lng: 135.5061 },
-      { id: "pl-os4", name: "Shitenno-ji", desc: { es: "El templo más antiguo de Japón (593)", en: "Japan's oldest temple (593)" }, tag: { es: "Templo", en: "Temple" }, maps: "Shitenno-ji Osaka", lat: 34.6616, lng: 135.5166 },
-      { id: "pl-os6", name: "Sumiyoshi Taisha", desc: { es: "Santuario antiguo + puente arqueado", en: "Ancient shrine + arched bridge" }, tag: { es: "Cultura", en: "Culture" }, maps: "Sumiyoshi Taisha", lat: 34.6126, lng: 135.4933 },
-      { id: "pl-os5", name: { es: "Shinsekai / Tsutenkaku", en: "Shinsekai / Tsutenkaku" }, desc: { es: "Osaka retro y kushikatsu", en: "Retro Osaka & kushikatsu" }, tag: { es: "Retro", en: "Retro" }, maps: "Shinsekai, Osaka", lat: 34.6525, lng: 135.5063 }
+      { id: "pl-os7", name: "Universal Studios Japan", desc: { es: "Super Nintendo World + Wizarding World", en: "Super Nintendo World + Wizarding World" }, tag: { es: "Parque", en: "Theme park" }, maps: "Universal Studios Japan", lat: 34.6654, lng: 135.4323 }
     ]},
     { city: { es: "Kyoto y Nara", en: "Kyoto & Nara" }, kanji: "京", color: "#1f3a52", places: [
       { id: "pl-ky1", name: "Fushimi Inari", desc: { es: "Miles de toriis rojos", en: "Thousands of red torii" }, tag: { es: "Icono", en: "Icon" }, maps: "Fushimi Inari Taisha", lat: 34.9671, lng: 135.7727 },
@@ -288,6 +291,7 @@ window.TRIP = {
     { city: { es: "Tokyo y alrededores", en: "Tokyo & around" }, kanji: "東", color: "#3a3128", places: [
       { id: "pl-tk1", name: "Senso-ji", desc: { es: "Templo más antiguo, Asakusa", en: "Oldest temple, Asakusa" }, tag: { es: "Templo", en: "Temple" }, maps: "Senso-ji", lat: 35.7148, lng: 139.7967 },
       { id: "pl-tk2", name: { es: "Cruce de Shibuya", en: "Shibuya Crossing" }, desc: { es: "El cruce más famoso", en: "The most famous crossing" }, tag: { es: "Icono", en: "Icon" }, maps: "Shibuya Crossing", lat: 35.6595, lng: 139.7004 },
+      { id: "pl-tk10", name: "Street Kart Shibuya", desc: { es: "Kart real-life por las calles (Santiago maneja)", en: "Real-life street kart (Santiago drives)" }, tag: { es: "Aventura", en: "Adventure" }, maps: "Street Kart Shibuya", lat: 35.6598, lng: 139.7016 },
       { id: "pl-tk3", name: "teamLab", desc: { es: "Arte digital inmersivo", en: "Immersive digital art" }, tag: { es: "Arte", en: "Art" }, maps: "teamLab Planets Tokyo", lat: 35.6498, lng: 139.7905 },
       { id: "pl-tk4", name: { es: "Santuario Meiji", en: "Meiji Shrine" }, desc: { es: "Bosque en plena ciudad", en: "Forest in the city" }, tag: { es: "Calma", en: "Calm" }, maps: "Meiji Jingu", lat: 35.6764, lng: 139.6993 },
       { id: "pl-tk5", name: "Akihabara", desc: { es: "Anime, manga y tecnología", en: "Anime, manga & tech" }, tag: { es: "Friki", en: "Geek" }, maps: "Akihabara", lat: 35.6984, lng: 139.7731 },
@@ -347,6 +351,19 @@ window.TRIP = {
     { from: "Himeji", to: "KIX", mode: "JR + Haruka", time: "~2h", cost: { es: "al aeropuerto", en: "to the airport" } }
   ],
 
+  transportTips: [
+    { t: { es: "IC Card (Suica/Icoca) por iPhone", en: "IC Card (Suica/Icoca) via iPhone" },
+      d: { es: "Se agrega directo en Apple Wallet con tarjeta de crédito apenas lleguen — no hace falta comprarla físicamente ni buscar máquina.", en: "Add it straight into Apple Wallet with a credit card as soon as you land — no need to buy a physical card or find a machine." } },
+    { t: { es: "Takkyubin (envío de equipaje)", en: "Takkyubin (luggage forwarding)" },
+      d: { es: "Dejas la maleta en la recepción del hotel al salir y llega al SIGUIENTE hotel al día siguiente (no el mismo día — solo sirve con una noche de colchón en medio). ¥1,600–2,300 por maleta grande. Útil para el tramo Gero/Takayama→Tokyo, así viajan livianos ese día de trenes largos.", en: "Drop the suitcase at hotel reception when checking out and it arrives at the NEXT hotel the following day (not same-day — only works with a buffer night). ¥1,600–2,300 per large bag. Handy for the Gero/Takayama→Tokyo leg so you travel light on that long train day." } }
+  ],
+  connectivity: [
+    { provider: "Sakura Mobile", price: { es: "~US$4 (1GB/7d) · US$24 (ilimitado/7d)", en: "~US$4 (1GB/7d) · US$24 (unlimited/7d)" }, network: { es: "Docomo o au 5G/4G", en: "Docomo or au 5G/4G" } },
+    { provider: "Airalo", price: { es: "US$4.50 (1GB/7d) · US$26 (20GB/30d)", en: "US$4.50 (1GB/7d) · US$26 (20GB/30d)" }, network: { es: "Solo 4G LTE, sin número japonés", en: "4G LTE only, no Japanese number" } },
+    { provider: "Ubigi", price: { es: "~US$66 ilimitado/mes", en: "~US$66 unlimited/month" }, network: { es: "Docomo — buena cobertura en montaña", en: "Docomo — good mountain coverage" } }
+  ],
+  connectivityRec: { es: "Recomendado: Sakura Mobile ilimitado 7 días (~US$24 c/u) o Airalo 20GB/30 días (~US$26) — Sakura tiene mejor cobertura en zonas de montaña como Gero/Takayama; Airalo es más simple de activar.", en: "Recommended: Sakura Mobile unlimited 7-day (~US$24 each) or Airalo 20GB/30 days (~US$26) — Sakura has better coverage in mountain areas like Gero/Takayama; Airalo is simpler to activate." },
+
   /* ---------------------------------------------------------------------- */
   /*  PHRASES                                                               */
   /* ---------------------------------------------------------------------- */
@@ -368,8 +385,6 @@ window.TRIP = {
   /* ---------------------------------------------------------------------- */
   stamps: [
     { id: "st-1", name: { es: "Estación de Osaka", en: "Osaka Station" }, type: "Eki 駅", city: "Osaka", glyph: "駅", day: 2, where: { es: "kiosco de la estación (JR Osaka/Tennoji)", en: "station kiosk (JR Osaka/Tennoji)" } },
-    { id: "st-11", name: "Shitenno-ji", type: "Goshuin 御朱印", city: "Osaka", glyph: "印", day: 3, where: { es: "oficina de goshuin del templo", en: "temple goshuin office" } },
-    { id: "st-12", name: "Sumiyoshi Taisha", type: "Goshuin 御朱印", city: "Osaka", glyph: "印", day: 3, where: { es: "junto al salón principal", en: "by the main hall" } },
     { id: "st-2", name: "Todai-ji", type: "Goshuin 御朱印", city: "Nara", glyph: "印", day: 4, where: { es: "junto al Gran Buda", en: "by the Great Buddha" } },
     { id: "st-13", name: "Kasuga Taisha", type: "Goshuin 御朱印", city: "Nara", glyph: "印", day: 4, where: { es: "oficina del santuario", en: "shrine office" } },
     { id: "st-14", name: { es: "Santuario Yasaka", en: "Yasaka Shrine" }, type: "Goshuin 御朱印", city: "Kyoto", glyph: "印", day: 4, where: { es: "oficina del santuario (Gion)", en: "shrine office (Gion)" } },
@@ -397,13 +412,29 @@ window.TRIP = {
   docs: [
     { id: "dc-1", label: { es: "Pasaportes (vigencia 6+ meses)", en: "Passports (valid 6+ months)" }, hint: { es: "Santi, Geral y Nico", en: "Santi, Geral & Nico" } },
     { id: "dc-2", label: { es: "eVISA Japón aprobada", en: "Japan eVISA approved" }, hint: { es: "evisa.mofa.go.jp · los 3 en una solicitud", en: "evisa.mofa.go.jp · all 3 in one application" } },
-    { id: "dc-3", label: { es: "Vuelos ida y vuelta (JQ23/JQ24)", en: "Return flights (JQ23/JQ24)" }, hint: { es: "ref SPBPNW · PDF offline", en: "ref SPBPNW · offline PDF" } },
-    { id: "dc-4", label: { es: "Reservas de hospedaje", en: "Accommodation bookings" }, hint: { es: "las 4 ciudades", en: "all 4 cities" } },
-    { id: "dc-5", label: { es: "Seguro de viaje", en: "Travel insurance" }, hint: { es: "activar CommBank Smart Awards antes de salir · cobertura médica + bebé", en: "activate CommBank Smart Awards before departure · medical cover + baby" } },
+    { id: "dc-3", label: { es: "Vuelos ida y vuelta (JQ23/JQ24)", en: "Return flights (JQ23/JQ24)" }, hint: { es: "ref SPBPNW · PDF offline", en: "ref SPBPNW · offline PDF" },
+      files: [{ id: "flight-itinerary", label: { es: "Itinerario Jetstar", en: "Jetstar itinerary" } }] },
+    { id: "dc-4", label: { es: "Reservas de hospedaje", en: "Accommodation bookings" }, hint: { es: "las 4 ciudades", en: "all 4 cities" },
+      files: [
+        { id: "hotel-osaka", label: { es: "Osaka", en: "Osaka" } },
+        { id: "hotel-kyoto", label: { es: "Kyoto", en: "Kyoto" } },
+        { id: "hotel-gero-takayama", label: { es: "Gero/Takayama", en: "Gero/Takayama" } },
+        { id: "hotel-tokyo", label: { es: "Tokyo", en: "Tokyo" } }
+      ] },
+    { id: "dc-5", label: { es: "Seguro de viaje", en: "Travel insurance" }, hint: { es: "activado · CommBank Smart Awards · póliza 726100871283", en: "activated · CommBank Smart Awards · policy 726100871283" },
+      files: [{ id: "insurance-certificate", label: { es: "Certificado de seguro", en: "Insurance certificate" } }] },
     { id: "dc-6", label: { es: "Visit Japan Web", en: "Visit Japan Web" }, hint: { es: "migración y aduana", en: "immigration & customs" } },
     { id: "dc-7", label: { es: "Prueba de residencia QLD", en: "QLD residency proof" }, hint: { es: "para la eVISA", en: "for the eVISA" } },
     { id: "dc-8", label: { es: "Extracto bancario 3 meses", en: "3-month bank statement" }, hint: { es: "para la eVISA", en: "for the eVISA" } },
-    { id: "dc-9", label: { es: "Copia de todo en la nube", en: "Cloud copy of everything" }, hint: { es: "por si acaso", en: "just in case" } }
+    { id: "dc-9", label: { es: "Copia de todo en la nube", en: "Cloud copy of everything" }, hint: { es: "por si acaso", en: "just in case" } },
+    { id: "dc-10", label: { es: "Copias de pasaporte", en: "Passport copies" }, hint: { es: "Santi, Geral y Nico · respaldo físico", en: "Santi, Geral & Nico · physical backup" },
+      files: [
+        { id: "passport-santiago", label: { es: "Santiago", en: "Santiago" } },
+        { id: "passport-geraldine", label: { es: "Geral", en: "Geral" } },
+        { id: "passport-nico", label: { es: "Nico", en: "Nico" } }
+      ] },
+    { id: "dc-11", label: { es: "Partida de nacimiento de Nico", en: "Nico's birth certificate" }, hint: { es: "por si inmigración la pide", en: "in case immigration asks for it" },
+      files: [{ id: "birth-certificate-nico", label: { es: "Ver documento", en: "View document" } }] }
   ],
 
   /* ---------------------------------------------------------------------- */
@@ -443,7 +474,8 @@ window.TRIP = {
     { id: "pr-13", priority: "green", label: { es: "Reservar bus Takayama→Shirakawa-go", en: "Reserve Takayama→Shirakawa-go bus" } },
     { id: "pr-14", priority: "green", label: { es: "Goshuin-cho (libreta de sellos)", en: "Goshuin-cho (stamp book)" } },
     { id: "pr-15", priority: "green", label: { es: "Ventilador USB + ropa ligera para Nico", en: "USB fan + light clothes for Nico" } },
-    { id: "pr-16", priority: "green", label: { es: "Google Maps offline + traductor", en: "Offline Google Maps + translator" } }
+    { id: "pr-16", priority: "green", label: { es: "Google Maps offline + traductor", en: "Offline Google Maps + translator" } },
+    { id: "pr-17", priority: "red", label: { es: "IDP de Santiago en RACQ para el kart de Shibuya (¡antes de salir, no se saca en Japón!)", en: "Santiago's IDP at RACQ for the Shibuya kart tour (before departure — can't get it in Japan!)" } }
   ],
 
   /* ---------------------------------------------------------------------- */
@@ -496,7 +528,7 @@ window.TRIP = {
   ],
   babyTips: [
     { t: { es: "Japón es muy baby-friendly", en: "Japan is very baby-friendly" }, d: { es: "Estaciones y centros comerciales tienen salas de lactancia (授乳室) y cambiadores. Busquen el ícono de bebé.", en: "Stations and malls have nursing rooms (授乳室) and changing tables. Look for the baby icon." } },
-    { t: { es: "Cargador > cochecito en multitudes", en: "Carrier > stroller in crowds" }, d: { es: "Templos y calles tienen escaleras y gente. El cargador es más práctico; cochecito para distancias largas y aeropuertos.", en: "Temples and streets have stairs and crowds. The carrier is handier; use the stroller for long distances and airports." } },
+    { t: { es: "Cargador > cochecito en multitudes", en: "Carrier > stroller in crowds" }, d: { es: "Templos de Kyoto/Nara tienen escaleras y grava — ahí el cargador tipo Ergobaby es mejor. Su propia carriola (la que llevan desde BNE) rinde más en Tokyo/Osaka/Universal (planas, con ascensor en el metro).", en: "Kyoto/Nara temples have stairs and gravel — an Ergobaby-style carrier works better there. Your own stroller (brought from BNE) is more useful in Tokyo/Osaka/Universal (flat, with metro elevators)." } },
     { t: { es: "Pañales y comida allá", en: "Diapers & food there" }, d: { es: "Konbini y farmacias venden pañales (Moony, Merries), papillas y leche. Solo lleven lo justo para empezar.", en: "Konbini and pharmacies sell diapers (Moony, Merries), baby food and milk. Bring just enough to start." } },
     { t: { es: "Eviten horas pico en tren", en: "Avoid rush hour trains" }, d: { es: "De 7-9am y 5-7pm los trenes van llenísimos. Viajen a media mañana o tarde con Nico.", en: "7-9am and 5-7pm trains are packed. Travel mid-morning or afternoon with Nico." } },
     { t: { es: "Siesta sobre la marcha", en: "Naps on the move" }, d: { es: "Nico siempre duerme en cochecito/cargador mientras caminan. Sin vueltas al hotel al mediodía.", en: "Nico always naps in the stroller/carrier on the move. No midday hotel returns." } },
@@ -553,12 +585,21 @@ window.TRIP = {
     { keys: ["dotonbori"], name: "Dotonbori 道頓堀", wiki: "Dōtonbori", maps: "Dotonbori, Osaka",
       desc: { es: "Canal con neones, el cartel Glico y la meca del street food de Osaka: takoyaki, okonomiyaki, kushikatsu.", en: "Neon canal with the Glico sign — Osaka's street-food mecca: takoyaki, okonomiyaki, kushikatsu." },
       tips: { es: "Mejor de noche con las luces. Lleven efectivo; muchos puestos no aceptan tarjeta.", en: "Best at night with the lights. Bring cash; many stalls are cash-only." } },
-    { keys: ["shitenno-ji", "shitenno"], name: "Shitenno-ji 四天王寺", wiki: "Shitennō-ji", maps: "Shitenno-ji Osaka",
-      desc: { es: "El primer templo budista administrado por el Estado en Japón, fundado en 593 por el príncipe Shotoku. Pagoda de cinco pisos y jardín.", en: "Japan's first state-administered Buddhist temple, founded 593 by Prince Shotoku. Five-story pagoda and garden." },
-      tips: { es: "El recinto es gratis; jardín y tesoro con entrada. Goshuin en la oficina. Cochecito OK.", en: "Grounds free; garden and treasure hall ticketed. Goshuin at the office. Stroller OK." } },
-    { keys: ["sumiyoshi"], name: "Sumiyoshi Taisha 住吉大社", wiki: "Sumiyoshi_taisha", maps: "Sumiyoshi Taisha",
-      desc: { es: "Uno de los santuarios más antiguos de Japón, con su estilo Sumiyoshi-zukuri único y el icónico puente arqueado Taiko-bashi.", en: "One of Japan's oldest shrines, with its unique Sumiyoshi-zukuri style and the iconic arched Taiko-bashi bridge." },
-      tips: { es: "Se llega en el tranvía retro Hankai (una experiencia). Gratis. Goshuin disponible.", en: "Reached by the retro Hankai tram (an experience). Free. Goshuin available." } },
+    { keys: ["super nintendo world", "nintendo world"], name: "Super Nintendo World", wiki: "Super_Nintendo_World", maps: "Super Nintendo World, Universal Studios Japan",
+      desc: { es: "Zona temática del Reino Champiñón: Castillo de Peach, Castillo de Bowser y Mine Cart Madness.", en: "Mushroom Kingdom themed area: Peach's Castle, Bowser's Castle and Mine Cart Madness." },
+      tips: { es: "Se necesita un Timed-Entry (gratis por la app de USJ al entrar, o incluido en el Express Pass). Fotos espectaculares aunque no monten nada.", en: "Needs a Timed-Entry ticket (free via the USJ app on entry, or included with Express Pass). Great photos even without riding anything." } },
+    { keys: ["wizarding world", "hogwarts", "hogsmeade"], name: "Wizarding World of Harry Potter", wiki: "The_Wizarding_World_of_Harry_Potter", maps: "Wizarding World of Harry Potter, Universal Studios Japan",
+      desc: { es: "Recreación de Hogsmeade y el Castillo de Hogwarts, con tiendas como Ollivander's y Honeydukes.", en: "Recreation of Hogsmeade village and Hogwarts Castle, with shops like Ollivander's and Honeydukes." },
+      tips: { es: "Entrada libre para caminar y tomar fotos, sin timed-entry. El castillo de noche está iluminado.", en: "Free to walk in and take photos, no timed-entry needed. The castle is lit up at night." } },
+    { keys: ["universal wonderland", "minion park"], name: "Universal Wonderland", wiki: "Universal_Studios_Japan", maps: "Universal Wonderland, Universal Studios Japan",
+      desc: { es: "Zona familiar con Minion Park y juegos suaves para niños pequeños.", en: "Family zone with Minion Park and gentle rides for young kids." },
+      tips: { es: "Sala de lactancia, cambiador y agua caliente para biberón junto a Guest Services — ideal para Nico.", en: "Nursing room, changing table and hot water for bottles by Guest Services — great for Nico." } },
+    { keys: ["universal studios", "usj"], name: "Universal Studios Japan", wiki: "Universal_Studios_Japan", maps: "Universal Studios Japan",
+      desc: { es: "Parque temático en Osaka; 2026 es su 25 aniversario (\"Discover U!\"), el año más concurrido en una década.", en: "Osaka theme park; 2026 is its 25th anniversary (\"Discover U!\"), the busiest year in a decade." },
+      tips: { es: "1-Day Studio Pass ~¥8,900 adulto (precio dinámico). Nico gratis (menor de 3). Lleven su propia carriola.", en: "1-Day Studio Pass ~¥8,900 adult (dynamic pricing). Nico free (under 3). Bring your own stroller." } },
+    { keys: ["street kart"], name: "Street Kart Shibuya", wiki: "Street_Kart", maps: "Street Kart Shibuya",
+      desc: { es: "Kart real-life por las calles de Shibuya/Harajuku, con disfraces incluidos. Ruta de ~1 hora.", en: "Real-life kart tour through the streets of Shibuya/Harajuku, costumes included. ~1 hour route." },
+      tips: { es: "Requiere IDP (Permiso Internacional de Conducción) sacado ANTES de viajar — no se emite en Japón. ~AUD $150 por conductor + ~AUD $9 de seguro opcional.", en: "Requires an IDP (International Driving Permit) obtained BEFORE travel — cannot be issued in Japan. ~AUD $150 per driver + ~AUD $9 optional insurance." } },
     { keys: ["kasuga"], name: "Kasuga Taisha 春日大社", wiki: "Kasuga-taisha", maps: "Kasuga Taisha Nara",
       desc: { es: "Santuario sintoísta famoso por cientos de linternas de bronce y piedra, en un bosque sagrado lleno de ciervos.", en: "Shinto shrine famed for hundreds of bronze and stone lanterns, in a sacred deer-filled forest." },
       tips: { es: "Sendero con sombra desde Todai-ji entre los ciervos. Goshuin en la oficina del santuario.", en: "Shaded path from Todai-ji through the deer. Goshuin at the shrine office." } },

@@ -781,7 +781,19 @@
       <a href="${transit(r.from, r.to)}" target="_blank" rel="noopener" style="font-size:11px;color:#1f3a52;font-weight:700;text-decoration:none;">${tr('Ver ruta', 'See route')} ↗</a></div>
       <div style="text-align:right;"><div style="font-size:13px;font-weight:700;color:#1f3a52;">${esc(L(r.time))}</div>
       <div style="font-size:11px;color:#9a8a6a;">${esc(L(r.cost))}</div></div></div>`).join('');
-    return listScreen('鉄', tr('Transporte', 'Transport'), tr('trenes e IC card', 'trains & IC card'), note + rows);
+    const tips = (T.transportTips || []).map(tp => `<div class="card" style="padding:13px 14px;margin-bottom:8px;border-left:3px solid #1f3a52;">
+      <div style="font-weight:700;font-size:13px;">${esc(L(tp.t))}</div>
+      <div style="font-size:12px;color:#6b5f4c;margin-top:3px;line-height:1.4;">${esc(L(tp.d))}</div></div>`).join('');
+    const esimRows = (T.connectivity || []).map(c => `<div class="card" style="display:flex;justify-content:space-between;align-items:center;gap:10px;padding:11px 13px;margin-bottom:7px;">
+      <div style="flex:1;"><div style="font-weight:700;font-size:13px;">${esc(c.provider)}</div>
+      <div style="font-size:11px;color:#9a8a6a;">${esc(L(c.network))}</div></div>
+      <div style="text-align:right;font-size:11.5px;color:#1f3a52;font-weight:600;max-width:160px;line-height:1.3;">${esc(L(c.price))}</div></div>`).join('');
+    const esimRec = T.connectivityRec ? `<div class="card" style="padding:13px;margin-top:2px;background:rgba(90,125,79,0.1);border-color:#cddcc2;">
+      <div style="font-size:12px;color:#4a5a40;line-height:1.45;">📶 ${esc(L(T.connectivityRec))}</div></div>` : '';
+    return listScreen('鉄', tr('Transporte', 'Transport'), tr('trenes, IC card y conectividad', 'trains, IC card & connectivity'),
+      note + rows +
+      (tips ? `<div class="secttl" style="margin:16px 0 8px;">${tr('TIPS', 'TIPS')}</div>${tips}` : '') +
+      (esimRows ? `<div class="secttl" style="margin:16px 0 8px;">${tr('eSIM / DATOS', 'eSIM / DATA')}</div>${esimRows}${esimRec}` : ''));
   }
 
   function scrMaleta() {
@@ -823,13 +835,30 @@
       progressBar(done, T.stamps.length) + `<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">${cards}</div>`);
   }
 
+  function docFilesBlock(files) {
+    if (!files || !files.length) return '';
+    const btns = files.map(f => `<span class="tap" data-action="doc-open" data-fileid="${f.id}" style="display:inline-flex;align-items:center;gap:4px;background:#1f3a521a;color:#1f3a52;border-radius:8px;padding:4px 9px;font-size:11px;font-weight:700;margin:6px 6px 0 0;">🖨️ ${esc(L(f.label))}</span>`).join('');
+    return `<div data-noswipe>${btns}</div>`;
+  }
   function scrDocs() {
     const statics = T.docs.filter(d => S.removed.docs.indexOf(d.id) < 0);
     let done = 0;
-    const rows = statics.map(d => { if (S.checks[d.id]) done++; const hint = L(d.hint) ? `<div style="font-size:11px;color:#9a8a6a;">${esc(L(d.hint))}</div>` : ''; return checklistRow(d.id, esc(L(d.label)) + hint); }).join('');
+    const rows = statics.map(d => { if (S.checks[d.id]) done++; const hint = L(d.hint) ? `<div style="font-size:11px;color:#9a8a6a;">${esc(L(d.hint))}</div>` : ''; return checklistRow(d.id, esc(L(d.label)) + hint + docFilesBlock(d.files)); }).join('');
     const custom = customRows('docs');
     return listScreen('証', tr('Documentos', 'Documents'), done + '/' + statics.length + tr(' listos', ' ready'),
-      progressBar(done, statics.length) + rows + custom + addBox('docs', tr('Añadir documento', 'Add document')));
+      progressBar(done, statics.length) + rows + custom + addBox('docs', tr('Añadir documento', 'Add document')) +
+      `<div style="font-size:11px;color:#b0a085;margin-top:10px;text-align:center;">${tr('🖨️ = ver/imprimir · pide contraseña una vez', '🖨️ = view/print · asks for password once')}</div>`);
+  }
+  async function docOpen(fileId) {
+    let pw = S.docsPw;
+    if (!pw) { pw = window.prompt(tr('Contraseña de documentos:', 'Documents password:'), '') || ''; if (!pw) return; }
+    try {
+      const r = await fetch(syncBase() + '/api/docs', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ id: fileId, pw }) });
+      const j = await r.json().catch(() => ({}));
+      if (r.ok && j.url) { S.docsPw = pw; save(); window.open(j.url, '_blank'); return; }
+      if (S.docsPw) { S.docsPw = null; save(); }
+      alert(tr('Contraseña incorrecta o documento no encontrado.', 'Wrong password or document not found.'));
+    } catch (e) { alert(tr('Error de red.', 'Network error.')); }
   }
 
   function scrBebe() {
@@ -1236,6 +1265,7 @@
     if (act === 'lb-next') { if (lightbox) { lightbox.idx = (lightbox.idx + 1) % lightbox.imgs.length; renderOverlay(); } return; }
     if (act === 'att-view') { attView(el.getAttribute('data-rid'), el.getAttribute('data-aid')); return; }
     if (act === 'att-del') { attDel(el.getAttribute('data-rid'), el.getAttribute('data-aid')); return; }
+    if (act === 'doc-open') { docOpen(el.getAttribute('data-fileid')); return; }
   });
 
   document.getElementById('shell').addEventListener('change', function (ev) {
